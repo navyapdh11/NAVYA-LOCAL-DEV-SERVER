@@ -766,5 +766,65 @@
       "moves": 1
     },
     "id": "audit-benchmark-63"
+  },
+  {
+    "timestamp": "2026-04-27T01:55:00.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.samsung.com",
+      "latency_ms": 1429.9,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-64"
+  },
+  {
+    "timestamp": "2026-04-27T01:55:01.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.amd.com",
+      "latency_ms": 1928.2,
+      "signals": 4,
+      "moves": 1
+    },
+    "id": "audit-benchmark-65"
+  },
+  {
+    "timestamp": "2026-04-27T01:55:02.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.hp.com",
+      "latency_ms": 2882.2,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-66"
+  },
+  {
+    "timestamp": "2026-04-27T01:55:03.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.dell.com",
+      "latency_ms": 1660.6,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-67"
+  },
+  {
+    "timestamp": "2026-04-27T01:55:04.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.lenovo.com",
+      "latency_ms": 1993.1,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-68"
   }
 ]
