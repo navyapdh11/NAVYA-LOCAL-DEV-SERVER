@@ -58,5 +58,89 @@
       "moves": 1
     },
     "id": "audit-benchmark-4"
+  },
+  {
+    "timestamp": "2026-04-26T21:30:00.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.google.com",
+      "latency_ms": 2455.2,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-5"
+  },
+  {
+    "timestamp": "2026-04-26T21:30:01.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.apple.com",
+      "latency_ms": 2140.2,
+      "signals": 3,
+      "moves": 2
+    },
+    "id": "audit-benchmark-6"
+  },
+  {
+    "timestamp": "2026-04-26T21:30:02.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.nvidia.com",
+      "latency_ms": 3115.5,
+      "signals": 12,
+      "moves": 1
+    },
+    "id": "audit-benchmark-7"
+  },
+  {
+    "timestamp": "2026-04-26T21:50:00.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://about.meta.com",
+      "latency_ms": 5295.3,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-8"
+  },
+  {
+    "timestamp": "2026-04-26T21:50:01.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.baidu.com",
+      "latency_ms": 2676.6,
+      "signals": 5,
+      "moves": 1
+    },
+    "id": "audit-benchmark-9"
+  },
+  {
+    "timestamp": "2026-04-26T21:50:02.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.salesforce.com",
+      "latency_ms": 2616.8,
+      "signals": 3,
+      "moves": 2
+    },
+    "id": "audit-benchmark-10"
+  },
+  {
+    "timestamp": "2026-04-26T21:50:03.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.adobe.com",
+      "latency_ms": 1796.6,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-11"
   }
 ]
