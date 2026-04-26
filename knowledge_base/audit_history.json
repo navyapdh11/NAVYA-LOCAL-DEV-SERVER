@@ -1942,5 +1942,65 @@
       "moves": 1
     },
     "id": "audit-benchmark-164"
+  },
+  {
+    "timestamp": "2026-04-27T12:00:00.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://rivian.com",
+      "latency_ms": 1739.7,
+      "signals": 4,
+      "moves": 2
+    },
+    "id": "audit-benchmark-165"
+  },
+  {
+    "timestamp": "2026-04-27T12:00:01.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.lucidmotors.com",
+      "latency_ms": 2685.3,
+      "signals": 5,
+      "moves": 2
+    },
+    "id": "audit-benchmark-166"
+  },
+  {
+    "timestamp": "2026-04-27T12:00:02.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.polestar.com",
+      "latency_ms": 1430.0,
+      "signals": 3,
+      "moves": 2
+    },
+    "id": "audit-benchmark-167"
+  },
+  {
+    "timestamp": "2026-04-27T12:00:03.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.nio.com",
+      "latency_ms": 2377.8,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-168"
+  },
+  {
+    "timestamp": "2026-04-27T12:00:04.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.byd.com",
+      "latency_ms": 3590.5,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-169"
   }
 ]
