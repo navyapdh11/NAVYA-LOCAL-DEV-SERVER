@@ -304,7 +304,7 @@
     "layer": "strategic_intel",
     "status": "SUCCESS",
     "data": {
-      "url": "https://www.mastercard.com",
+      "url": "https://Mastercard",
       "latency_ms": 4798.5,
       "signals": 3,
       "moves": 1
@@ -862,5 +862,53 @@
       "moves": 1
     },
     "id": "audit-benchmark-71"
+  },
+  {
+    "timestamp": "2026-04-27T02:30:00.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.pg.com",
+      "latency_ms": 4160.8,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-72"
+  },
+  {
+    "timestamp": "2026-04-27T02:30:01.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.unilever.com",
+      "latency_ms": 2500.9,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-73"
+  },
+  {
+    "timestamp": "2026-04-27T02:30:02.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.coca-colacompany.com",
+      "latency_ms": 1736.9,
+      "signals": 3,
+      "moves": 2
+    },
+    "id": "audit-benchmark-74"
+  },
+  {
+    "timestamp": "2026-04-27T02:30:03.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.pepsico.com",
+      "latency_ms": 1670.2,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-75"
   }
 ]
