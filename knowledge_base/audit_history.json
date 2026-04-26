@@ -1364,5 +1364,63 @@
       "latency_ms": 4617.1
     },
     "id": "audit-benchmark-114"
+  },
+  {
+    "timestamp": "2026-04-27T07:00:00.000000",
+    "layer": "strategic_intel",
+    "status": "FAILED",
+    "data": {
+      "url": "https://www.zillow.com",
+      "latency_ms": 8607.8
+    },
+    "id": "audit-benchmark-115"
+  },
+  {
+    "timestamp": "2026-04-27T07:00:01.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.redfin.com",
+      "latency_ms": 9642.3,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-116"
+  },
+  {
+    "timestamp": "2026-04-27T07:00:02.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.rea-group.com",
+      "latency_ms": 8565.0,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-117"
+  },
+  {
+    "timestamp": "2026-04-27T07:00:03.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.rightmove.co.uk",
+      "latency_ms": 8979.4,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-118"
+  },
+  {
+    "timestamp": "2026-04-27T07:00:04.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.compass.com",
+      "latency_ms": 8977.5,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-119"
   }
 ]
