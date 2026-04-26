@@ -1132,5 +1132,61 @@
       "moves": 1
     },
     "id": "audit-benchmark-94"
+  },
+  {
+    "timestamp": "2026-04-27T04:30:00.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://corporate.exxonmobil.com",
+      "latency_ms": 2408.6,
+      "signals": 3,
+      "moves": 2
+    },
+    "id": "audit-benchmark-95"
+  },
+  {
+    "timestamp": "2026-04-27T04:30:01.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.shell.com",
+      "latency_ms": 3057.1,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-96"
+  },
+  {
+    "timestamp": "2026-04-27T04:30:02.000000",
+    "layer": "strategic_intel",
+    "status": "FAILED",
+    "data": {
+      "url": "https://www.chevron.com",
+      "latency_ms": 2717.1
+    },
+    "id": "audit-benchmark-97"
+  },
+  {
+    "timestamp": "2026-04-27T04:30:03.000000",
+    "layer": "strategic_intel",
+    "status": "FAILED",
+    "data": {
+      "url": "https://www.bp.com",
+      "latency_ms": 1726.9
+    },
+    "id": "audit-benchmark-98"
+  },
+  {
+    "timestamp": "2026-04-27T04:30:04.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.totalenergies.com",
+      "latency_ms": 2949.8,
+      "signals": 3,
+      "moves": 2
+    },
+    "id": "audit-benchmark-99"
   }
 ]
