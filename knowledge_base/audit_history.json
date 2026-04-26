@@ -1,0 +1,62 @@
+[
+  {
+    "timestamp": "2026-04-26T21:10:00.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.microsoft.com",
+      "latency_ms": 2419.8,
+      "signals": 3,
+      "moves": 2
+    },
+    "id": "audit-benchmark-0"
+  },
+  {
+    "timestamp": "2026-04-26T21:10:01.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://github.com",
+      "latency_ms": 2405.0,
+      "signals": 4,
+      "moves": 1
+    },
+    "id": "audit-benchmark-1"
+  },
+  {
+    "timestamp": "2026-04-26T21:10:02.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.deepseek.com",
+      "latency_ms": 1782.9,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-2"
+  },
+  {
+    "timestamp": "2026-04-26T21:10:03.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.alibaba.com",
+      "latency_ms": 2446.9,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-3"
+  },
+  {
+    "timestamp": "2026-04-26T21:10:04.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.anthropic.com",
+      "latency_ms": 1913.7,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-4"
+  }
+]

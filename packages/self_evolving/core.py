@@ -3,6 +3,9 @@ import torch.nn as nn
 from typing import Dict, Any, List
 import datetime
 
+import json
+import os
+
 class WikiLibrarian:
     """
     2026 WikiLLM Librarian Pattern.
@@ -10,7 +13,20 @@ class WikiLibrarian:
     """
     def __init__(self, kb_path: str = "knowledge_base"):
         self.kb_path = kb_path
-        self.audit_log = []
+        self.log_file = os.path.join(kb_path, "audit_history.json")
+        if not os.path.exists(kb_path):
+            os.makedirs(kb_path)
+        self.audit_log = self._load_memory()
+
+    def _load_memory(self) -> List[Dict]:
+        if os.path.exists(self.log_file):
+            with open(self.log_file, "r") as f:
+                return json.load(f)
+        return []
+
+    def _save_memory(self):
+        with open(self.log_file, "w") as f:
+            json.dump(self.audit_log, f, indent=2)
 
     def record_audit(self, layer: str, result: Dict[str, Any]):
         entry = {
@@ -21,7 +37,7 @@ class WikiLibrarian:
             "id": f"audit-{len(self.audit_log)}"
         }
         self.audit_log.append(entry)
-        # In a real implementation, this would write to a .md file with YAML frontmatter
+        self._save_memory()
         print(f"Librarian: Indexed {entry['id']} in WikiLLM KB.")
 
     def get_context_for_healing(self, failure_type: str) -> str:
@@ -55,6 +71,9 @@ class SelfEvolvingCore:
         self.mythos = mythos_engine
         self.librarian = WikiLibrarian()
         self.trainer = SelfHealingTrainer()
+        # Prime the trainer with existing knowledge from memory
+        if self.librarian.audit_log:
+            self.trainer.optimize_from_logs(self.librarian.audit_log)
 
     def run_evolved_test(self, layer: str, test_func):
         # 1. Memory Retrieval (Context)
