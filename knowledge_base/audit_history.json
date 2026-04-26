@@ -346,5 +346,65 @@
       "moves": 1
     },
     "id": "audit-benchmark-28"
+  },
+  {
+    "timestamp": "2026-04-26T23:20:00.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.crowdstrike.com",
+      "latency_ms": 2902.2,
+      "signals": 5,
+      "moves": 2
+    },
+    "id": "audit-benchmark-29"
+  },
+  {
+    "timestamp": "2026-04-26T23:20:01.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.paloaltonetworks.com",
+      "latency_ms": 3975.6,
+      "signals": 4,
+      "moves": 1
+    },
+    "id": "audit-benchmark-30"
+  },
+  {
+    "timestamp": "2026-04-26T23:20:02.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.cloudflare.com",
+      "latency_ms": 3802.1,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-31"
+  },
+  {
+    "timestamp": "2026-04-26T23:20:03.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.zscaler.com",
+      "latency_ms": 3008.0,
+      "signals": 4,
+      "moves": 1
+    },
+    "id": "audit-benchmark-32"
+  },
+  {
+    "timestamp": "2026-04-26T23:20:04.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.sentinelone.com",
+      "latency_ms": 2300.8,
+      "signals": 5,
+      "moves": 1
+    },
+    "id": "audit-benchmark-33"
   }
 ]
