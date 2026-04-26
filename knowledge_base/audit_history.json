@@ -634,5 +634,53 @@
       "moves": 1
     },
     "id": "audit-benchmark-52"
+  },
+  {
+    "timestamp": "2026-04-27T01:00:00.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.toyota.com",
+      "latency_ms": 2619.9,
+      "signals": 3,
+      "moves": 2
+    },
+    "id": "audit-benchmark-53"
+  },
+  {
+    "timestamp": "2026-04-27T01:00:01.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.vw.com",
+      "latency_ms": 2259.6,
+      "signals": 3,
+      "moves": 2
+    },
+    "id": "audit-benchmark-54"
+  },
+  {
+    "timestamp": "2026-04-27T01:00:02.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.mercedes-benz.com",
+      "latency_ms": 2107.5,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-55"
+  },
+  {
+    "timestamp": "2026-04-27T01:00:03.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.siemens.com",
+      "latency_ms": 6399.8,
+      "signals": 4,
+      "moves": 1
+    },
+    "id": "audit-benchmark-56"
   }
 ]
