@@ -178,5 +178,53 @@
       "moves": 1
     },
     "id": "audit-benchmark-14"
+  },
+  {
+    "timestamp": "2026-04-26T22:30:00.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.reddit.com",
+      "latency_ms": 2146.2,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-15"
+  },
+  {
+    "timestamp": "2026-04-26T22:30:01.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.linkedin.com",
+      "latency_ms": 2661.8,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-16"
+  },
+  {
+    "timestamp": "2026-04-26T22:30:02.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.spotify.com",
+      "latency_ms": 3667.5,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-17"
+  },
+  {
+    "timestamp": "2026-04-26T22:30:03.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.netflix.com",
+      "latency_ms": 4532.5,
+      "signals": 3,
+      "moves": 2
+    },
+    "id": "audit-benchmark-18"
   }
 ]
