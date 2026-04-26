@@ -958,5 +958,61 @@
       "moves": 1
     },
     "id": "audit-benchmark-79"
+  },
+  {
+    "timestamp": "2026-04-27T03:00:00.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.nike.com",
+      "latency_ms": 3977.4,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-80"
+  },
+  {
+    "timestamp": "2026-04-27T03:00:01.000000",
+    "layer": "strategic_intel",
+    "status": "FAILED",
+    "data": {
+      "url": "https://www.adidas.com",
+      "latency_ms": 3971.7
+    },
+    "id": "audit-benchmark-81"
+  },
+  {
+    "timestamp": "2026-04-27T03:00:02.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.ikea.com",
+      "latency_ms": 3224.4,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-82"
+  },
+  {
+    "timestamp": "2026-04-27T03:00:03.000000",
+    "layer": "strategic_intel",
+    "status": "FAILED",
+    "data": {
+      "url": "https://www.hm.com",
+      "latency_ms": 3379.5
+    },
+    "id": "audit-benchmark-83"
+  },
+  {
+    "timestamp": "2026-04-27T03:00:04.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.walmart.com",
+      "latency_ms": 3210.7,
+      "signals": 3,
+      "moves": 2
+    },
+    "id": "audit-benchmark-84"
   }
 ]
