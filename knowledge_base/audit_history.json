@@ -1248,5 +1248,63 @@
       "moves": 1
     },
     "id": "audit-benchmark-104"
+  },
+  {
+    "timestamp": "2026-04-27T06:00:00.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.coursera.org",
+      "latency_ms": 9181.1,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-105"
+  },
+  {
+    "timestamp": "2026-04-27T06:00:01.000000",
+    "layer": "strategic_intel",
+    "status": "FAILED",
+    "data": {
+      "url": "https://www.udemy.com",
+      "latency_ms": 4958.8
+    },
+    "id": "audit-benchmark-106"
+  },
+  {
+    "timestamp": "2026-04-27T06:00:02.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.duolingo.com",
+      "latency_ms": 6271.6,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-107"
+  },
+  {
+    "timestamp": "2026-04-27T06:00:03.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.khanacademy.org",
+      "latency_ms": 5352.2,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-108"
+  },
+  {
+    "timestamp": "2026-04-27T06:00:04.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.edx.org",
+      "latency_ms": 8427.9,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-109"
   }
 ]
