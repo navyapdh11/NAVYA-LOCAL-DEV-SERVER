@@ -142,5 +142,41 @@
       "moves": 1
     },
     "id": "audit-benchmark-11"
+  },
+  {
+    "timestamp": "2026-04-26T22:10:00.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.ibm.com",
+      "latency_ms": 4803.9,
+      "signals": 7,
+      "moves": 1
+    },
+    "id": "audit-benchmark-12"
+  },
+  {
+    "timestamp": "2026-04-26T22:10:01.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.intel.com",
+      "latency_ms": 2102.1,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-13"
+  },
+  {
+    "timestamp": "2026-04-26T22:10:02.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.zoom.us",
+      "latency_ms": 2862.4,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-14"
   }
 ]
