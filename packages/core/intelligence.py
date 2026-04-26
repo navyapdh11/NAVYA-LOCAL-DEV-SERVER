@@ -12,7 +12,9 @@ class StrategicIntelligenceEngine:
     """
     def __init__(self):
         self.headers = {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) NAVYA-MYTHOS-INTEL/2026.4"
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
+            "Accept-Language": "en-US,en;q=0.9",
         }
 
     async def scrape_semantic(self, url: str) -> Dict[str, Any]:
@@ -20,9 +22,9 @@ class StrategicIntelligenceEngine:
         Performs a semantic scrape, converting HTML to token-efficient Markdown.
         Ideal for 2026 RAG and AEO analysis pipelines.
         """
-        async with httpx.AsyncClient(headers=self.headers, follow_redirects=True) as client:
+        async with httpx.AsyncClient(headers=self.headers, follow_redirects=True, verify=False) as client:
             try:
-                response = await client.get(url, timeout=10.0)
+                response = await client.get(url, timeout=20.0)
                 response.raise_for_status()
                 
                 # Extract core content

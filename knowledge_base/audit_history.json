@@ -1532,5 +1532,63 @@
       "moves": 2
     },
     "id": "audit-benchmark-129"
+  },
+  {
+    "timestamp": "2026-04-27T08:30:00.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.shopify.com",
+      "latency_ms": 1440.3,
+      "signals": 3,
+      "moves": 2
+    },
+    "id": "audit-benchmark-130"
+  },
+  {
+    "timestamp": "2026-04-27T08:30:01.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.slack.com",
+      "latency_ms": 4162.4,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-131"
+  },
+  {
+    "timestamp": "2026-04-27T08:30:02.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.dropbox.com",
+      "latency_ms": 2931.4,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-132"
+  },
+  {
+    "timestamp": "2026-04-27T08:30:03.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.zoom.us",
+      "latency_ms": 2372.9,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-133"
+  },
+  {
+    "timestamp": "2026-04-27T08:30:04.000000",
+    "layer": "strategic_intel",
+    "status": "FAILED",
+    "data": {
+      "url": "https://www.salesforce.com",
+      "latency_ms": 1500.5
+    },
+    "id": "audit-benchmark-134"
   }
 ]
