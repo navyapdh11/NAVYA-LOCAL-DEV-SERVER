@@ -673,7 +673,7 @@ async def solution_chat_dashboard():
                 // Add User Message
                 chatWindow.innerHTML += `
                     <div class="message user-msg">
-                        \${{query}}
+                        ${{query}}
                     </div>
                 `;
                 
@@ -722,19 +722,19 @@ async def solution_chat_dashboard():
                     
                     chatWindow.innerHTML += responseHtml;
                     chatWindow.scrollTop = chatWindow.scrollHeight;
-                } catch (e) {{
+                }} catch (e) {{
                     typing.style.display = "none";
                     chatWindow.innerHTML += `<div class="message agent-msg" style="border-color:red">Error: \${{e.message}}</div>`;
                 }}
-            }}
+                }}
 
-            function copyMsg(id) {{
+                function copyMsg(id) {{
                 const el = document.getElementById(id);
                 const text = el.innerText;
                 navigator.clipboard.writeText(text);
                 alert("Strategy copied to clipboard!");
-            }}
-        </script>
+                }}
+                </script>
     </body>
     </html>
     """
