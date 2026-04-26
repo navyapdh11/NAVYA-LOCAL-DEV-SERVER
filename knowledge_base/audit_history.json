@@ -586,5 +586,53 @@
       "moves": 1
     },
     "id": "audit-benchmark-48"
+  },
+  {
+    "timestamp": "2026-04-27T00:40:00.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.jnj.com",
+      "latency_ms": 3147.4,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-49"
+  },
+  {
+    "timestamp": "2026-04-27T00:40:01.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.pfizer.com",
+      "latency_ms": 1952.3,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-50"
+  },
+  {
+    "timestamp": "2026-04-27T00:40:02.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.novartis.com",
+      "latency_ms": 1908.6,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-51"
+  },
+  {
+    "timestamp": "2026-04-27T00:40:03.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.roche.com",
+      "latency_ms": 5772.7,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-52"
   }
 ]
