@@ -26,6 +26,13 @@ The power of scalability.
 - **Discover & Install:** Browse trending extensions like **CyberAudit X** (Security) or **Alibaba Page Agent** (Browser Automation).
 - **Run Anywhere:** Once installed, you can execute these third-party agents directly from your portal to handle specialized tasks.
 
+## 6. ⚖️ Governance & Hyperlocal SEO (`/governance`)
+Enterprise-grade compliance and local dominance.
+- **Hyperlocal Optimization:** Generate 2026-spec **LocalBusiness Schema** (JSON-LD) with neighborhood-level targeting (`areaServed`) and expertise markers (`knowsAbout`).
+- **AEO FAQs:** Autonomously generate conversational FAQ blocks optimized for Answer Engine zero-click citations.
+- **Legal Compliance Audit:** Perform real-time audits against the **EU AI Act (2026)** and **India DPDP Act**, ensuring your system meets high-risk documentation and human-oversight standards.
+- **Privacy Manifest:** Generate AI transparency manifests to verify data locality and processing standards.
+
 ## 5. 🧬 Self-Evolving Core (The Brain)
 The most advanced part of your server.
 - **WikiLLM Librarian:** Every test result is recorded in a persistent knowledge base.

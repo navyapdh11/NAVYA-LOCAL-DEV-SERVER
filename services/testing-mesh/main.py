@@ -12,6 +12,8 @@ from packages.seo_agent.thrashing_engine import CompetitorThrashingEngine
 from packages.test_sprite.auto_tester import TestSpriteAgent
 from packages.self_evolving.core import SelfEvolvingCore
 from packages.extensions.registry import ExtensionRegistry
+from packages.seo_agent.hyperlocal import HyperlocalSEOAgent
+from packages.core.compliance import ComplianceLegalAgent
 
 app = FastAPI(title="NAVYA MYTHOS Dashboard")
 agent = SuperAgentHarness()
@@ -20,6 +22,16 @@ thrashing_engine = CompetitorThrashingEngine("localhost:8081")
 test_sprite = TestSpriteAgent()
 master_core = SelfEvolvingCore(mythos_engine=agent)
 ext_portal = ExtensionRegistry()
+compliance_agent = ComplianceLegalAgent()
+local_seo_agent = HyperlocalSEOAgent({
+    "name": "NAVYA MYTHOS Enterprise",
+    "address": "Local Hybrid Node 01",
+    "lat": -37.8136,
+    "lng": 144.9631,
+    "neighborhoods": ["CBD", "Southbank", "Docklands"],
+    "specialties": ["AI Testing", "Enterprise Sanitization"],
+    "social_proof": ["https://google.com/maps/place/navya"]
+})
 
 # In-memory store for API connections
 api_connections = {
@@ -98,6 +110,8 @@ async def dashboard():
             <a href="/" id="nav-home">Command Center</a>
             <a href="/connectivity" id="nav-conn">API Hub</a>
             <a href="/intelligence" id="nav-intel">Strategy Intel</a>
+            <a href="/portal" id="nav-portal">Extension Portal</a>
+            <a href="/governance" id="nav-gov">Governance & Local</a>
         </nav>
 
         <div class="container">
@@ -539,6 +553,133 @@ async def extension_portal_dashboard():
     </body>
     </html>
     """
+
+@app.get("/governance", response_class=HTMLResponse)
+async def governance_dashboard():
+    return """
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>NAVYA | Governance & Local SEO</title>
+        <style>
+            :root {
+                --primary: #0070f3;
+                --accent: #ffaa00;
+                --bg: #0a0a0a;
+                --glass: rgba(255, 255, 255, 0.05);
+                --border: rgba(255, 255, 255, 0.1);
+            }
+            body {
+                background: var(--bg);
+                color: white;
+                font-family: 'Inter', sans-serif;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                min-height: 100vh;
+                background: radial-gradient(circle at bottom right, #1a1a1a, #0a0a0a);
+            }
+            nav { width: 100%; padding: 1rem 2rem; display: flex; gap: 2rem; border-bottom: 1px solid var(--border); background: rgba(0,0,0,0.5); }
+            nav a { color: white; text-decoration: none; font-weight: bold; opacity: 0.6; }
+            nav a:hover, nav a.active { opacity: 1; color: var(--primary); }
+            .container { max-width: 1000px; width: 90%; margin-top: 2rem; }
+            .glass { background: var(--glass); backdrop-filter: blur(12px); border: 1px solid var(--border); border-radius: 24px; padding: 2rem; margin-bottom: 1.5rem; }
+            .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+            pre { background: rgba(0,0,0,0.5); padding: 1rem; border-radius: 12px; font-size: 0.85rem; overflow-x: auto; color: #00ff00; }
+            .status-pass { color: #00ff00; font-weight: bold; }
+            button { background: var(--primary); color: white; border: none; padding: 1rem; border-radius: 10px; cursor: pointer; font-weight: bold; width: 100%; margin-top: 10px; }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <a href="/">Command Center</a>
+            <a href="/connectivity">API Hub</a>
+            <a href="/intelligence">Strategy Intel</a>
+            <a href="/portal">Extension Portal</a>
+            <a href="/governance" class="active">Governance & Local</a>
+        </nav>
+        <div class="container">
+            <div class="glass">
+                <h1>Governance & <span style="color:var(--accent)">Hyperlocal</span> SEO</h1>
+                <p style="opacity:0.6">Automated legal compliance auditing and micro-market entity verification.</p>
+            </div>
+
+            <div class="grid">
+                <div class="glass">
+                    <h3>Hyperlocal Optimization</h3>
+                    <p style="font-size:0.85rem; opacity:0.7">Generate 2026-spec LocalBusiness schema and conversational FAQs.</p>
+                    <button onclick="genSchema()">Generate Advanced Schema</button>
+                    <button class="secondary" onclick="genFAQs()" style="margin-top:10px">Generate AEO FAQs</button>
+                </div>
+                <div class="glass">
+                    <h3>Legal & Compliance Audit</h3>
+                    <p style="font-size:0.85rem; opacity:0.7">Validate system against EU AI Act, India DPDP, and ISO 42001.</p>
+                    <button onclick="runAudit()">Execute Legal Audit</button>
+                    <button class="secondary" onclick="genManifest()" style="margin-top:10px">Generate Privacy Manifest</button>
+                </div>
+            </div>
+
+            <div class="glass" id="gov-output-box" style="display:none">
+                <h3 id="gov-output-title">Output</h3>
+                <pre id="gov-output"></pre>
+            </div>
+        </div>
+
+        <script>
+            async function showOutput(title, content) {
+                document.getElementById('gov-output-box').style.display = "block";
+                document.getElementById('gov-output-title').innerText = title;
+                document.getElementById('gov-output').innerText = typeof content === 'string' ? content : JSON.stringify(content, null, 2);
+            }
+
+            async function genSchema() {
+                const res = await fetch('/local/schema');
+                const data = await res.json();
+                showOutput("Hyperlocal Schema (JSON-LD)", data.schema);
+            }
+
+            async function genFAQs() {
+                const res = await fetch('/local/faqs?area=Melbourne%20CBD');
+                const data = await res.json();
+                showOutput("AEO Conversational FAQs", data.faqs);
+            }
+
+            async function runAudit() {
+                const res = await fetch('/compliance/audit', {method: 'POST'});
+                const data = await res.json();
+                showOutput("Legal Compliance Report", data);
+            }
+
+            async function genManifest() {
+                const res = await fetch('/compliance/manifest');
+                const data = await res.json();
+                showOutput("AI Privacy Manifest", data.manifest);
+            }
+        </script>
+    </body>
+    </html>
+    """
+
+@app.get("/local/schema")
+def get_local_schema():
+    return {"schema": local_seo_agent.generate_advanced_schema()}
+
+@app.get("/local/faqs")
+def get_local_faqs(area: str):
+    return {"faqs": local_seo_agent.generate_aeo_faqs(area)}
+
+@app.post("/compliance/audit")
+def run_legal_audit():
+    # Simulation of system metadata for audit
+    meta = {"human_oversight": True, "data_locality": "India"}
+    return compliance_agent.audit_legal_compliance(meta)
+
+@app.get("/compliance/manifest")
+def get_privacy_manifest():
+    return {"manifest": compliance_agent.generate_privacy_manifest()}
 
 @app.get("/api/test-connection")
 async def test_api_connection(provider: str):
