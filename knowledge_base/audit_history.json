@@ -286,5 +286,65 @@
       "moves": 1
     },
     "id": "audit-benchmark-23"
+  },
+  {
+    "timestamp": "2026-04-26T23:05:00.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.visa.com",
+      "latency_ms": 4268.1,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-24"
+  },
+  {
+    "timestamp": "2026-04-26T23:05:01.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.mastercard.com",
+      "latency_ms": 4798.5,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-25"
+  },
+  {
+    "timestamp": "2026-04-26T23:05:02.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.paypal.com",
+      "latency_ms": 4240.5,
+      "signals": 3,
+      "moves": 2
+    },
+    "id": "audit-benchmark-26"
+  },
+  {
+    "timestamp": "2026-04-26T23:05:03.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://stripe.com",
+      "latency_ms": 4441.0,
+      "signals": 5,
+      "moves": 2
+    },
+    "id": "audit-benchmark-27"
+  },
+  {
+    "timestamp": "2026-04-26T23:05:04.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.block.xyz",
+      "latency_ms": 4824.2,
+      "signals": 4,
+      "moves": 1
+    },
+    "id": "audit-benchmark-28"
   }
 ]
