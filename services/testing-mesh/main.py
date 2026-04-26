@@ -14,6 +14,7 @@ from packages.self_evolving.core import SelfEvolvingCore
 from packages.extensions.registry import ExtensionRegistry
 from packages.seo_agent.hyperlocal import HyperlocalSEOAgent
 from packages.core.compliance import ComplianceLegalAgent
+from packages.core.chat_engine import SolutionChatEngine
 
 app = FastAPI(title="NAVYA MYTHOS Dashboard")
 agent = SuperAgentHarness()
@@ -23,6 +24,7 @@ test_sprite = TestSpriteAgent()
 master_core = SelfEvolvingCore(mythos_engine=agent)
 ext_portal = ExtensionRegistry()
 compliance_agent = ComplianceLegalAgent()
+chat_engine = SolutionChatEngine()
 local_seo_agent = HyperlocalSEOAgent({
     "name": "NAVYA MYTHOS Enterprise",
     "address": "Local Hybrid Node 01",
@@ -112,6 +114,7 @@ async def dashboard():
             <a href="/intelligence" id="nav-intel">Strategy Intel</a>
             <a href="/portal" id="nav-portal">Extension Portal</a>
             <a href="/governance" id="nav-gov">Governance & Local</a>
+            <a href="/chat" id="nav-chat">Solution Chat</a>
         </nav>
 
         <div class="container">
@@ -419,6 +422,119 @@ async def intelligence_dashboard():
     </body>
     </html>
     """
+
+@app.get("/chat", response_class=HTMLResponse)
+async def solution_chat_dashboard():
+    return """
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>NAVYA | Solution Chat</title>
+        <style>
+            :root {
+                --primary: #0070f3;
+                --accent: #ff0080;
+                --bg: #0a0a0a;
+                --glass: rgba(255, 255, 255, 0.05);
+                --border: rgba(255, 255, 255, 0.1);
+            }
+            body {
+                background: var(--bg);
+                color: white;
+                font-family: 'Inter', sans-serif;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                min-height: 100vh;
+                background: radial-gradient(circle at bottom right, #1a1a1a, #0a0a0a);
+            }
+            nav { width: 100%; padding: 1rem 2rem; display: flex; gap: 2rem; border-bottom: 1px solid var(--border); background: rgba(0,0,0,0.5); }
+            nav a { color: white; text-decoration: none; font-weight: bold; opacity: 0.6; }
+            nav a:hover, nav a.active { opacity: 1; color: var(--primary); }
+            .container { max-width: 1000px; width: 90%; margin-top: 2rem; display: flex; flex-direction: column; height: 80vh; }
+            .glass { background: var(--glass); backdrop-filter: blur(12px); border: 1px solid var(--border); border-radius: 24px; padding: 2rem; margin-bottom: 1.5rem; flex-shrink: 0; }
+            #chat-window { flex-grow: 1; overflow-y: auto; background: rgba(255,255,255,0.02); border-radius: 24px; border: 1px solid var(--border); padding: 2rem; margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 1rem; }
+            .message { max-width: 80%; padding: 1rem 1.5rem; border-radius: 16px; font-size: 0.95rem; line-height: 1.5; }
+            .user-msg { align-self: flex-end; background: var(--primary); color: white; }
+            .agent-msg { align-self: flex-start; background: rgba(255,255,255,0.1); border: 1px solid var(--border); }
+            .input-area { display: flex; gap: 1rem; flex-shrink: 0; }
+            input { flex-grow: 1; background: rgba(0,0,0,0.3); border: 1px solid var(--border); color: white; padding: 1rem; border-radius: 12px; font-size: 1rem; }
+            button { background: var(--primary); color: white; border: none; padding: 1rem 2rem; border-radius: 12px; cursor: pointer; font-weight: bold; }
+            .source-tag { font-size: 0.75rem; color: var(--primary); margin-top: 0.5rem; display: block; opacity: 0.8; }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <a href="/">Command Center</a>
+            <a href="/connectivity">API Hub</a>
+            <a href="/intelligence">Strategy Intel</a>
+            <a href="/portal">Extension Portal</a>
+            <a href="/governance">Governance & Local</a>
+            <a href="/chat" class="active">Solution Chat</a>
+        </nav>
+        <div class="container">
+            <div class="glass" style="padding: 1.5rem 2rem;">
+                <h1 style="font-size: 1.8rem; margin: 0;">Solution <span style="color:var(--primary)">Chat</span></h1>
+                <p style="opacity:0.6; margin: 0.5rem 0 0 0;">Query 140+ global site profiles and generated thrashing moves.</p>
+            </div>
+
+            <div id="chat-window">
+                <div class="message agent-msg">
+                    Welcome. I am the <strong>OpenMythos Strategy Agent</strong>. I have synthesized the data of 140 global market leaders. 
+                    <br><br>How can I help you optimize your competitive position today?
+                </div>
+            </div>
+
+            <div class="input-area">
+                <input type="text" id="user-input" placeholder="Ask about a competitor or strategy... (e.g., 'How can I beat Microsoft?')" onkeypress="if(event.key==='Enter') sendMessage()">
+                <button onclick="sendMessage()">Send Command</button>
+            </div>
+        </div>
+
+        <script>
+            async function sendMessage() {
+                const input = document.getElementById('user-input');
+                const query = input.value;
+                if(!query) return;
+
+                const chatWindow = document.getElementById('chat-window');
+                
+                // Add User Message
+                chatWindow.innerHTML += `<div class="message user-msg">${query}</div>`;
+                input.value = "";
+                chatWindow.scrollTop = chatWindow.scrollHeight;
+
+                try {
+                    const res = await fetch(`/chat/query?query=${encodeURIComponent(query)}`, {method: 'POST'});
+                    const data = await res.json();
+                    
+                    let responseHtml = `
+                        <div class="message agent-msg">
+                            ${data.answer}<br><br>
+                            <strong>Key Insights:</strong>
+                            <ul>${data.key_insights.map(i => `<li>${i}</li>`).join('')}</ul>
+                            <strong>Recommended Actions:</strong>
+                            <ul>${data.recommended_actions.map(a => `<li>${a}</li>`).join('')}</ul>
+                            <span class="source-tag">Contextual Sources: ${data.context_source.join(', ')}</span>
+                        </div>
+                    `;
+                    chatWindow.innerHTML += responseHtml;
+                    chatWindow.scrollTop = chatWindow.scrollHeight;
+                } catch (e) {
+                    chatWindow.innerHTML += `<div class="message agent-msg">Error connecting to Mythos Core: ${e.message}</div>`;
+                }
+            }
+        </script>
+    </body>
+    </html>
+    """
+
+@app.post("/chat/query")
+def run_chat_query(query: str):
+    return chat_engine.query_solutions(query)
 
 @app.post("/evolve/run-test")
 def run_evolved_test(layer: str, task: str):
