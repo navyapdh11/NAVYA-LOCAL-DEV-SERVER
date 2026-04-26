@@ -526,5 +526,65 @@
       "moves": 1
     },
     "id": "audit-benchmark-43"
+  },
+  {
+    "timestamp": "2026-04-27T00:20:00.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.disney.com",
+      "latency_ms": 1745.8,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-44"
+  },
+  {
+    "timestamp": "2026-04-27T00:20:01.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.sony.com",
+      "latency_ms": 2543.7,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-45"
+  },
+  {
+    "timestamp": "2026-04-27T00:20:02.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.nintendo.com",
+      "latency_ms": 1697.4,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-46"
+  },
+  {
+    "timestamp": "2026-04-27T00:20:03.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.warnerbros.com",
+      "latency_ms": 1529.7,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-47"
+  },
+  {
+    "timestamp": "2026-04-27T00:20:04.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.paramount.com",
+      "latency_ms": 1999.9,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-48"
   }
 ]
