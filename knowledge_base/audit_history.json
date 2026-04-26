@@ -1188,5 +1188,65 @@
       "moves": 2
     },
     "id": "audit-benchmark-99"
+  },
+  {
+    "timestamp": "2026-04-27T05:00:00.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.goldmansachs.com",
+      "latency_ms": 5685.5,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-100"
+  },
+  {
+    "timestamp": "2026-04-27T05:00:01.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.jpmorganchase.com",
+      "latency_ms": 5667.5,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-101"
+  },
+  {
+    "timestamp": "2026-04-27T05:00:02.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.morganstanley.com",
+      "latency_ms": 6124.2,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-102"
+  },
+  {
+    "timestamp": "2026-04-27T05:00:03.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.blackrock.com",
+      "latency_ms": 6764.9,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-103"
+  },
+  {
+    "timestamp": "2026-04-27T05:00:04.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.hsbc.com",
+      "latency_ms": 7045.1,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-104"
   }
 ]
