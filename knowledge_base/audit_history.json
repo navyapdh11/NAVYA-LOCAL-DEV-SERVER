@@ -1422,5 +1422,59 @@
       "moves": 1
     },
     "id": "audit-benchmark-119"
+  },
+  {
+    "timestamp": "2026-04-27T07:30:00.000000",
+    "layer": "strategic_intel",
+    "status": "FAILED",
+    "data": {
+      "url": "https://www.delta.com",
+      "latency_ms": 25406.7
+    },
+    "id": "audit-benchmark-120"
+  },
+  {
+    "timestamp": "2026-04-27T07:30:01.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.united.com",
+      "latency_ms": 8391.8,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-121"
+  },
+  {
+    "timestamp": "2026-04-27T07:30:02.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.aa.com",
+      "latency_ms": 14604.9,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-122"
+  },
+  {
+    "timestamp": "2026-04-27T07:30:03.000000",
+    "layer": "strategic_intel",
+    "status": "FAILED",
+    "data": {
+      "url": "https://www.lufthansa.com",
+      "latency_ms": 14677.5
+    },
+    "id": "audit-benchmark-123"
+  },
+  {
+    "timestamp": "2026-04-27T07:30:04.000000",
+    "layer": "strategic_intel",
+    "status": "FAILED",
+    "data": {
+      "url": "https://www.emirates.com",
+      "latency_ms": 12540.3
+    },
+    "id": "audit-benchmark-124"
   }
 ]
