@@ -7,9 +7,11 @@ from fastapi.responses import HTMLResponse
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")))
 
 from packages.core.engine import SuperAgentHarness
+from packages.core.intelligence import StrategicIntelligenceEngine
 
 app = FastAPI(title="NAVYA MYTHOS Dashboard")
 agent = SuperAgentHarness()
+intel_engine = StrategicIntelligenceEngine()
 
 # In-memory store for API connections
 api_connections = {
@@ -85,9 +87,11 @@ async def dashboard():
     </head>
     <body>
         <nav>
-            <a href="/" class="active">Command Center</a>
-            <a href="/connectivity">API Hub</a>
+            <a href="/" id="nav-home">Command Center</a>
+            <a href="/connectivity" id="nav-conn">API Hub</a>
+            <a href="/intelligence" id="nav-intel">Strategy Intel</a>
         </nav>
+
         <div class="container">
             <div class="glass">
                 <h1>NAVYA <span style="color:var(--primary)">MYTHOS</span> <span class="badge">v2026.4</span></h1>
@@ -270,6 +274,130 @@ async def connectivity_dashboard():
     </html>
     """
 
+@app.get("/intelligence", response_class=HTMLResponse)
+async def intelligence_dashboard():
+    return """
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>NAVYA | Strategy Intelligence</title>
+        <style>
+            :root {
+                --primary: #0070f3;
+                --accent: #ff0080;
+                --bg: #0a0a0a;
+                --glass: rgba(255, 255, 255, 0.05);
+                --border: rgba(255, 255, 255, 0.1);
+            }
+            body {
+                background: var(--bg);
+                color: white;
+                font-family: 'Inter', sans-serif;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                min-height: 100vh;
+                background: radial-gradient(circle at top left, #1a1a1a, #0a0a0a);
+            }
+            nav { width: 100%; padding: 1rem 2rem; display: flex; gap: 2rem; border-bottom: 1px solid var(--border); background: rgba(0,0,0,0.5); }
+            nav a { color: white; text-decoration: none; font-weight: bold; opacity: 0.6; }
+            nav a:hover, nav a.active { opacity: 1; color: var(--primary); }
+            .container { max-width: 1000px; width: 90%; margin-top: 2rem; }
+            .glass { background: var(--glass); backdrop-filter: blur(12px); border: 1px solid var(--border); border-radius: 24px; padding: 2rem; margin-bottom: 1.5rem; }
+            input { background: rgba(0,0,0,0.3); border: 1px solid var(--border); color: white; padding: 1rem; border-radius: 12px; width: 70%; margin-right: 1rem; font-size: 1rem; }
+            button { background: var(--primary); color: white; border: none; padding: 1rem 2rem; border-radius: 12px; cursor: pointer; font-weight: bold; font-size: 1rem; }
+            .result-card { background: rgba(0,255,0,0.05); border: 1px solid rgba(0,255,0,0.2); padding: 1.5rem; border-radius: 16px; margin-top: 2rem; display: none; }
+            .signal { display: inline-block; padding: 4px 12px; background: var(--primary); border-radius: 20px; font-size: 0.8rem; margin-right: 8px; margin-bottom: 8px; }
+            pre { background: rgba(0,0,0,0.5); padding: 1rem; border-radius: 8px; font-size: 0.85rem; overflow-x: auto; max-height: 200px; color: #aaa; }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <a href="/">Command Center</a>
+            <a href="/connectivity">API Hub</a>
+            <a href="/intelligence" class="active">Strategy Intel</a>
+        </nav>
+        <div class="container">
+            <div class="glass">
+                <h1>Competitor <span style="color:var(--primary)">Intelligence</span> Engine</h1>
+                <p style="opacity:0.6">Autonomous semantic scraping and strategic "thrashing" moves based on 2026 AEO standards.</p>
+                
+                <div style="margin-top:2rem">
+                    <input type="text" id="target-url" placeholder="https://competitor-site.com" value="https://www.google.com">
+                    <button onclick="runIntel()">Analyze Strategy</button>
+                </div>
+            </div>
+
+            <div id="loading" style="display:none; margin-bottom: 2rem;">🚀 Agent initiating semantic extraction loop...</div>
+
+            <div class="result-card" id="result-box">
+                <h3 style="color:var(--primary)">Intelligence Report: <span id="report-title"></span></h3>
+                <div id="signals-box" style="margin-bottom:1.5rem"></div>
+                
+                <div class="glass" style="background:rgba(255,0,128,0.1); border-color:rgba(255,0,128,0.3)">
+                    <h4 style="margin-top:0">Recommended Thrashing Moves</h4>
+                    <ul id="moves-list" style="padding-left:1.5rem; line-height:1.6"></ul>
+                    <p><strong>Impact:</strong> <span id="impact-text"></span></p>
+                </div>
+
+                <h4>Semantic Footprint (Markdown)</h4>
+                <pre id="md-box"></pre>
+            </div>
+        </div>
+
+        <script>
+            async function runIntel() {
+                const url = document.getElementById('target-url').value;
+                const box = document.getElementById('result-box');
+                const loading = document.getElementById('loading');
+                
+                if(!url) return alert("Please enter a URL");
+                
+                loading.style.display = "block";
+                box.style.display = "none";
+
+                try {
+                    const res = await fetch(`/intel?url=${encodeURIComponent(url)}`);
+                    const data = await res.json();
+                    
+                    if(data.status === "failed") throw new Error(data.error);
+
+                    document.getElementById('report-title').innerText = data.scrape.meta.title;
+                    document.getElementById('md-box').innerText = data.scrape.semantic_markdown;
+                    
+                    // Signals
+                    const signalsBox = document.getElementById('signals-box');
+                    signalsBox.innerHTML = "";
+                    if(data.strategy.signals.pricing_detected) signalsBox.innerHTML += '<span class="signal">Pricing Logic Detected</span>';
+                    if(data.strategy.signals.enterprise_focus) signalsBox.innerHTML += '<span class="signal">Enterprise Targeting</span>';
+                    data.strategy.signals.aeo_keywords.forEach(k => {
+                        signalsBox.innerHTML += `<span class="signal" style="background:var(--accent)">AEO: ${k}</span>`;
+                    });
+
+                    // Moves
+                    const list = document.getElementById('moves-list');
+                    list.innerHTML = "";
+                    data.strategy.recommended_thrashing_moves.forEach(m => {
+                        list.innerHTML += `<li>${m}</li>`;
+                    });
+
+                    document.getElementById('impact-text').innerText = data.strategy.share_of_model_prediction;
+
+                    box.style.display = "block";
+                } catch (e) {
+                    alert("Extraction Failed: " + e.message);
+                } finally {
+                    loading.style.display = "none";
+                }
+            }
+        </script>
+    </body>
+    </html>
+    """
+
 @app.get("/api/test-connection")
 async def test_api_connection(provider: str):
     import httpx
@@ -284,6 +412,14 @@ async def test_api_connection(provider: str):
             return {"status": "active" if response.status_code < 500 else "error"}
     except Exception:
         return {"status": "offline"}
+
+@app.get("/intel")
+async def run_intel(url: str):
+    data = await intel_engine.scrape_semantic(url)
+    if data["status"] == "success":
+        strategy = intel_engine.analyze_strategy(data)
+        return {"scrape": data, "strategy": strategy}
+    return data
 
 @app.get("/health")
 def health():
