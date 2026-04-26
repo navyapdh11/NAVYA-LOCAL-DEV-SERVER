@@ -826,5 +826,41 @@
       "moves": 1
     },
     "id": "audit-benchmark-68"
+  },
+  {
+    "timestamp": "2026-04-27T02:10:00.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.airbus.com",
+      "latency_ms": 2334.9,
+      "signals": 4,
+      "moves": 1
+    },
+    "id": "audit-benchmark-69"
+  },
+  {
+    "timestamp": "2026-04-27T02:10:01.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.rtx.com",
+      "latency_ms": 2832.4,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-70"
+  },
+  {
+    "timestamp": "2026-04-27T02:10:02.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.northropgrumman.com",
+      "latency_ms": 1517.7,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-71"
   }
 ]
