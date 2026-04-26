@@ -1706,5 +1706,63 @@
       "moves": 1
     },
     "id": "audit-benchmark-144"
+  },
+  {
+    "timestamp": "2026-04-27T10:00:00.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.ycombinator.com",
+      "latency_ms": 2257.6,
+      "signals": 3,
+      "moves": 2
+    },
+    "id": "audit-benchmark-145"
+  },
+  {
+    "timestamp": "2026-04-27T10:00:01.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.angellist.com",
+      "latency_ms": 1325.9,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-146"
+  },
+  {
+    "timestamp": "2026-04-27T10:00:02.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.crunchbase.com",
+      "latency_ms": 2718.5,
+      "signals": 3,
+      "moves": 2
+    },
+    "id": "audit-benchmark-147"
+  },
+  {
+    "timestamp": "2026-04-27T10:00:03.000000",
+    "layer": "strategic_intel",
+    "status": "FAILED",
+    "data": {
+      "url": "https://www.producthunt.com",
+      "latency_ms": 611.6
+    },
+    "id": "audit-benchmark-148"
+  },
+  {
+    "timestamp": "2026-04-27T10:00:04.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.techstars.com",
+      "latency_ms": 1879.7,
+      "signals": 3,
+      "moves": 2
+    },
+    "id": "audit-benchmark-149"
   }
 ]
