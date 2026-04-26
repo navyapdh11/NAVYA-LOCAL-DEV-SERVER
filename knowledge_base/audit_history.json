@@ -2002,5 +2002,61 @@
       "moves": 1
     },
     "id": "audit-benchmark-169"
+  },
+  {
+    "timestamp": "2026-04-27T08:30:00.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.allianz.com",
+      "latency_ms": 844.9
+    },
+    "id": "audit-benchmark-170"
+  },
+  {
+    "timestamp": "2026-04-27T08:30:01.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.axa.com",
+      "latency_ms": 10368.4,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-171"
+  },
+  {
+    "timestamp": "2026-04-27T08:30:02.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.prudential.com",
+      "latency_ms": 3376.2,
+      "signals": 4,
+      "moves": 1
+    },
+    "id": "audit-benchmark-172"
+  },
+  {
+    "timestamp": "2026-04-27T08:30:03.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.chubb.com",
+      "latency_ms": 1316.4,
+      "signals": 3,
+      "moves": 2
+    },
+    "id": "audit-benchmark-173"
+  },
+  {
+    "timestamp": "2026-04-27T08:30:04.000000",
+    "layer": "strategic_intel",
+    "status": "FAILED",
+    "data": {
+      "url": "https://www.metlife.com",
+      "latency_ms": 771.4
+    },
+    "id": "audit-benchmark-174"
   }
 ]
