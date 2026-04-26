@@ -517,9 +517,46 @@ async def solution_chat_dashboard():
                 padding: 10px;
                 display: flex;
                 gap: 10px;
-                margin-top: 10px;
+                margin-top: 5px;
                 box-shadow: 0 -10px 40px rgba(0,0,0,0.5);
             }}
+            
+            .suggestion-chips {{
+                display: flex;
+                gap: 10px;
+                margin-bottom: 10px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }}
+            
+            .chip {{
+                background: rgba(255,255,255,0.05);
+                border: 1px solid var(--border);
+                padding: 6px 15px;
+                border-radius: 20px;
+                font-size: 0.8rem;
+                cursor: pointer;
+                transition: all 0.2s;
+            }}
+            
+            .chip:hover {{
+                background: var(--primary);
+                border-color: var(--primary);
+                transform: translateY(-2px);
+            }}
+
+            .clear-btn {{
+                background: transparent;
+                border: 1px solid rgba(255,0,0,0.2);
+                color: #ff4444;
+                padding: 5px 12px;
+                border-radius: 8px;
+                font-size: 0.7rem;
+                cursor: pointer;
+                margin-left: auto;
+            }}
+            
+            .clear-btn:hover {{ background: rgba(255,0,0,0.1); }}
             
             input {{
                 flex-grow: 1;
@@ -576,7 +613,13 @@ async def solution_chat_dashboard():
     </head>
     <body>
         {COMMON_NAV}
+        
         <div class="chat-container">
+            <div style="display:flex; align-items:center; margin-bottom: 10px;">
+                <h1 style="font-size: 1.2rem; margin: 0; opacity: 0.8;">Solution <span style="color:var(--primary)">Chat</span></h1>
+                <button class="clear-btn" onclick="clearChat()">CLEAR HISTORY</button>
+            </div>
+
             <div id="chat-window">
                 <div class="message agent-msg">
                     <strong style="color:var(--primary)">NAVYA MYTHOS CORE</strong><br>
@@ -588,6 +631,13 @@ async def solution_chat_dashboard():
             
             <div id="typing" class="typing-indicator">Mythos is synthesizing data...</div>
 
+            <div class="suggestion-chips">
+                <div class="chip" onclick="useQuery('How can I beat Microsoft?')">Beat Microsoft</div>
+                <div class="chip" onclick="useQuery('AEO signals for Fintech?')">Fintech AEO</div>
+                <div class="chip" onclick="useQuery('SaaS thrashing moves?')">SaaS Strategy</div>
+                <div class="chip" onclick="useQuery('Luxury brand entity markers?')">Luxury Prestige</div>
+            </div>
+
             <div class="input-area">
                 <input type="text" id="user-input" placeholder="Query the 2026 Strategy Memory..." autocomplete="off">
                 <button id="send-btn" onclick="sendMessage()">SEND</button>
@@ -597,6 +647,21 @@ async def solution_chat_dashboard():
         <script>
             const input = document.getElementById('user-input');
             input.addEventListener('keypress', (e) => {{ if(e.key === 'Enter') sendMessage(); }});
+
+            function useQuery(txt) {{
+                input.value = txt;
+                sendMessage();
+            }}
+
+            function clearChat() {{
+                const chatWindow = document.getElementById('chat-window');
+                chatWindow.innerHTML = `
+                    <div class="message agent-msg">
+                        <strong style="color:var(--primary)">NAVYA MYTHOS CORE</strong><br>
+                        History cleared. System ready for new commands.
+                    </div>
+                `;
+            }}
 
             async function sendMessage() {{
                 const query = input.value.trim();
@@ -657,7 +722,7 @@ async def solution_chat_dashboard():
                     
                     chatWindow.innerHTML += responseHtml;
                     chatWindow.scrollTop = chatWindow.scrollHeight;
-                }} catch (e) {{
+                } catch (e) {{
                     typing.style.display = "none";
                     chatWindow.innerHTML += `<div class="message agent-msg" style="border-color:red">Error: \${{e.message}}</div>`;
                 }}

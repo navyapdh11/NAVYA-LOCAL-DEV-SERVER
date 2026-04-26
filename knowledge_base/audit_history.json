@@ -1822,5 +1822,65 @@
       "latency_ms": 21120.7
     },
     "id": "audit-benchmark-154"
+  },
+  {
+    "timestamp": "2026-04-27T11:00:00.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.tiktok.com",
+      "latency_ms": 1162.6,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-155"
+  },
+  {
+    "timestamp": "2026-04-27T11:00:01.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.x.com",
+      "latency_ms": 3368.7,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-156"
+  },
+  {
+    "timestamp": "2026-04-27T11:00:02.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.instagram.com",
+      "latency_ms": 2028.9,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-157"
+  },
+  {
+    "timestamp": "2026-04-27T11:00:03.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.youtube.com",
+      "latency_ms": 1910.6,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-158"
+  },
+  {
+    "timestamp": "2026-04-27T11:00:04.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.twitch.tv",
+      "latency_ms": 1290.1,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-159"
   }
 ]
