@@ -910,5 +910,53 @@
       "moves": 1
     },
     "id": "audit-benchmark-75"
+  },
+  {
+    "timestamp": "2026-04-27T02:45:00.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.att.com",
+      "latency_ms": 5290.5,
+      "signals": 3,
+      "moves": 2
+    },
+    "id": "audit-benchmark-76"
+  },
+  {
+    "timestamp": "2026-04-27T02:45:01.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.verizon.com",
+      "latency_ms": 2564.5,
+      "signals": 3,
+      "moves": 2
+    },
+    "id": "audit-benchmark-77"
+  },
+  {
+    "timestamp": "2026-04-27T02:45:02.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.t-mobile.com",
+      "latency_ms": 1972.9,
+      "signals": 3,
+      "moves": 2
+    },
+    "id": "audit-benchmark-78"
+  },
+  {
+    "timestamp": "2026-04-27T02:45:03.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.nokia.com",
+      "latency_ms": 2465.5,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-79"
   }
 ]
