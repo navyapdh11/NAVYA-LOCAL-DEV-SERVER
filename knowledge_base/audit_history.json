@@ -1590,5 +1590,65 @@
       "latency_ms": 1500.5
     },
     "id": "audit-benchmark-134"
+  },
+  {
+    "timestamp": "2026-04-27T09:00:00.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.ea.com",
+      "latency_ms": 1529.0,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-135"
+  },
+  {
+    "timestamp": "2026-04-27T09:00:01.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.ubisoft.com",
+      "latency_ms": 3754.6,
+      "signals": 13,
+      "moves": 2
+    },
+    "id": "audit-benchmark-136"
+  },
+  {
+    "timestamp": "2026-04-27T09:00:02.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.roblox.com",
+      "latency_ms": 1519.6,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-137"
+  },
+  {
+    "timestamp": "2026-04-27T09:00:03.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.unity.com",
+      "latency_ms": 2570.2,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-138"
+  },
+  {
+    "timestamp": "2026-04-27T09:00:04.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.autodesk.com",
+      "latency_ms": 10389.7,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-139"
   }
 ]
