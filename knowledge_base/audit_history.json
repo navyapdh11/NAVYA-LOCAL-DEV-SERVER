@@ -1014,5 +1014,63 @@
       "moves": 2
     },
     "id": "audit-benchmark-84"
+  },
+  {
+    "timestamp": "2026-04-27T03:30:00.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.lvmh.com",
+      "latency_ms": 3295.4,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-85"
+  },
+  {
+    "timestamp": "2026-04-27T03:30:01.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.kering.com",
+      "latency_ms": 3191.0,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-86"
+  },
+  {
+    "timestamp": "2026-04-27T03:30:02.000000",
+    "layer": "strategic_intel",
+    "status": "FAILED",
+    "data": {
+      "url": "https://www.hermes.com",
+      "latency_ms": 2181.9
+    },
+    "id": "audit-benchmark-87"
+  },
+  {
+    "timestamp": "2026-04-27T03:30:03.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.rolex.com",
+      "latency_ms": 2563.3,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-88"
+  },
+  {
+    "timestamp": "2026-04-27T03:30:04.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.richemont.com",
+      "latency_ms": 3369.3,
+      "signals": 4,
+      "moves": 1
+    },
+    "id": "audit-benchmark-89"
   }
 ]
