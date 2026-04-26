@@ -631,11 +631,53 @@ async def solution_chat_dashboard():
             
             <div id="typing" class="typing-indicator">Mythos is synthesizing data...</div>
 
-            <div class="suggestion-chips">
-                <div class="chip" onclick="useQuery('How can I beat Microsoft?')">Beat Microsoft</div>
-                <div class="chip" onclick="useQuery('AEO signals for Fintech?')">Fintech AEO</div>
-                <div class="chip" onclick="useQuery('SaaS thrashing moves?')">SaaS Strategy</div>
-                <div class="chip" onclick="useQuery('Luxury brand entity markers?')">Luxury Prestige</div>
+            <div class="suggestion-chips-container" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 15px; overflow-y: auto; max-height: 200px; padding-right: 5px;">
+                
+                <div style="text-align: left;">
+                    <span style="font-size: 0.7rem; color: var(--primary); display: block; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">Tech, Cloud & SaaS</span>
+                    <div class="suggestion-chips" style="justify-content: flex-start; margin-bottom: 5px;">
+                        <div class="chip" onclick="useQuery('Beat Microsoft in AEO')">Beat Microsoft</div>
+                        <div class="chip" onclick="useQuery('SaaS pricing transparency gaps')">SaaS Pricing</div>
+                        <div class="chip" onclick="useQuery('Cloud infrastructure semantic strategy')">Cloud Strategy</div>
+                        <div class="chip" onclick="useQuery('AI & Data Infrastructure authority')">AI Leaders</div>
+                        <div class="chip" onclick="useQuery('Gaming & Software licensing markers')">Gaming/Software</div>
+                    </div>
+                </div>
+
+                <div style="text-align: left;">
+                    <span style="font-size: 0.7rem; color: var(--primary); display: block; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">Finance, Security & Media</span>
+                    <div class="suggestion-chips" style="justify-content: flex-start; margin-bottom: 5px;">
+                        <div class="chip" onclick="useQuery('Fintech AEO signals')">Fintech Intel</div>
+                        <div class="chip" onclick="useQuery('Investment Banking trust markers')">Banking Trust</div>
+                        <div class="chip" onclick="useQuery('Cybersecurity compliance footprint')">Cybersec</div>
+                        <div class="chip" onclick="useQuery('Media & Journalism paywall markers')">Media/News</div>
+                        <div class="chip" onclick="useQuery('Social Media platform footprints')">Social Media</div>
+                    </div>
+                </div>
+
+                <div style="text-align: left;">
+                    <span style="font-size: 0.7rem; color: var(--primary); display: block; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">Commerce, Lifestyle & EdTech</span>
+                    <div class="suggestion-chips" style="justify-content: flex-start; margin-bottom: 5px;">
+                        <div class="chip" onclick="useQuery('Luxury brand prestige citations')">Luxury Brands</div>
+                        <div class="chip" onclick="useQuery('E-commerce promotional thrashing')">E-commerce</div>
+                        <div class="chip" onclick="useQuery('Travel and Hospitality geolocation')">Travel GEO</div>
+                        <div class="chip" onclick="useQuery('Fast Food & Beverage local AEO')">Fast Food Local</div>
+                        <div class="chip" onclick="useQuery('Consumer Goods promotional signals')">Consumer Goods</div>
+                        <div class="chip" onclick="useQuery('EdTech certification markers')">EdTech</div>
+                    </div>
+                </div>
+
+                <div style="text-align: left;">
+                    <span style="font-size: 0.7rem; color: var(--primary); display: block; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">Industry, Auto & Real Estate</span>
+                    <div class="suggestion-chips" style="justify-content: flex-start; margin-bottom: 5px;">
+                        <div class="chip" onclick="useQuery('Heavy Industry B2B markers')">Heavy Industry</div>
+                        <div class="chip" onclick="useQuery('Automotive competitive edge')">Automotive</div>
+                        <div class="chip" onclick="useQuery('Aerospace defense optimization')">Aerospace</div>
+                        <div class="chip" onclick="useQuery('Energy & Resources citations')">Energy</div>
+                        <div class="chip" onclick="useQuery('Real Estate PropTech authority')">Real Estate</div>
+                        <div class="chip" onclick="useQuery('Healthcare & Pharma safety signals')">Healthcare</div>
+                    </div>
+                </div>
             </div>
 
             <div class="input-area">
