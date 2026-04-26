@@ -11,6 +11,7 @@ from packages.core.intelligence import StrategicIntelligenceEngine
 from packages.seo_agent.thrashing_engine import CompetitorThrashingEngine
 from packages.test_sprite.auto_tester import TestSpriteAgent
 from packages.self_evolving.core import SelfEvolvingCore
+from packages.extensions.registry import ExtensionRegistry
 
 app = FastAPI(title="NAVYA MYTHOS Dashboard")
 agent = SuperAgentHarness()
@@ -18,6 +19,7 @@ intel_engine = StrategicIntelligenceEngine()
 thrashing_engine = CompetitorThrashingEngine("localhost:8081")
 test_sprite = TestSpriteAgent()
 master_core = SelfEvolvingCore(mythos_engine=agent)
+ext_portal = ExtensionRegistry()
 
 # In-memory store for API connections
 api_connections = {
@@ -421,6 +423,122 @@ def get_evolve_history():
         "knowledge_level": master_core.trainer.learning_progress,
         "logs": master_core.librarian.audit_log[-10:] # Last 10
     }
+
+@app.get("/extensions")
+def get_extensions():
+    return ext_portal.get_all()
+
+@app.post("/extensions/install")
+def install_ext(ext_id: str):
+    return ext_portal.install_extension(ext_id)
+
+@app.post("/extensions/execute")
+async def execute_ext(ext_id: str, payload: dict = {}):
+    return await ext_portal.execute_extension(ext_id, payload)
+
+@app.get("/portal", response_class=HTMLResponse)
+async def extension_portal_dashboard():
+    return """
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>NAVYA | Extension Portal</title>
+        <style>
+            :root {
+                --primary: #0070f3;
+                --accent: #00ff00;
+                --bg: #0a0a0a;
+                --glass: rgba(255, 255, 255, 0.05);
+                --border: rgba(255, 255, 255, 0.1);
+            }
+            body {
+                background: var(--bg);
+                color: white;
+                font-family: 'Inter', sans-serif;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                min-height: 100vh;
+                background: radial-gradient(circle at top right, #1a1a1a, #0a0a0a);
+            }
+            nav { width: 100%; padding: 1rem 2rem; display: flex; gap: 2rem; border-bottom: 1px solid var(--border); background: rgba(0,0,0,0.5); }
+            nav a { color: white; text-decoration: none; font-weight: bold; opacity: 0.6; }
+            nav a:hover, nav a.active { opacity: 1; color: var(--primary); }
+            .container { max-width: 1000px; width: 90%; margin-top: 2rem; }
+            .glass { background: var(--glass); backdrop-filter: blur(12px); border: 1px solid var(--border); border-radius: 24px; padding: 2rem; margin-bottom: 1.5rem; }
+            .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
+            .ext-card { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 20px; padding: 1.5rem; transition: transform 0.2s; }
+            .ext-card:hover { transform: translateY(-5px); border-color: var(--primary); }
+            .badge { font-size: 0.7rem; background: var(--primary); padding: 4px 8px; border-radius: 6px; }
+            .status { font-size: 0.8rem; font-weight: bold; text-transform: uppercase; margin-top: 1rem; display: block; }
+            button { background: var(--primary); color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 10px; cursor: pointer; font-weight: bold; width: 100%; margin-top: 1rem; }
+            button.installed { background: rgba(0,255,0,0.1); color: var(--accent); border: 1px solid var(--accent); }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <a href="/">Command Center</a>
+            <a href="/connectivity">API Hub</a>
+            <a href="/intelligence">Strategy Intel</a>
+            <a href="/portal" class="active">Extension Portal</a>
+        </nav>
+        <div class="container">
+            <div class="glass">
+                <h1>Agentic <span style="color:var(--primary)">Extension</span> Portal</h1>
+                <p style="opacity:0.6">Discover and integrate 2026 enterprise-grade MCP tools and autonomous agents.</p>
+            </div>
+
+            <div class="grid" id="ext-grid">
+                <!-- Extensions will be loaded here -->
+            </div>
+        </div>
+
+        <script>
+            async function loadExtensions() {
+                const res = await fetch('/extensions');
+                const exts = await res.json();
+                const grid = document.getElementById('ext-grid');
+                grid.innerHTML = "";
+
+                for (const [id, data] of Object.entries(exts)) {
+                    const isInstalled = data.status === "installed";
+                    grid.innerHTML += `
+                        <div class="ext-card">
+                            <div style="display:flex; justify-content:space-between; align-items:start;">
+                                <strong>${data.name}</strong>
+                                <span class="badge">${data.version}</span>
+                            </div>
+                            <p style="font-size:0.85rem; opacity:0.7; margin: 1rem 0;">${data.description}</p>
+                            <span class="status" style="color: ${isInstalled ? 'var(--accent)' : '#aaa'}">
+                                ${isInstalled ? '● Active' : '○ Available'}
+                            </span>
+                            <button class="${isInstalled ? 'installed' : ''}" 
+                                    onclick="${isInstalled ? `executeExt('${id}')` : `installExt('${id}')`}">
+                                ${isInstalled ? 'Run Extension' : 'Install into Mesh'}
+                            </button>
+                        </div>
+                    `;
+                }
+            }
+
+            async function installExt(id) {
+                await fetch(`/extensions/install?ext_id=${id}`, {method: 'POST'});
+                loadExtensions();
+            }
+
+            async function executeExt(id) {
+                alert(`Initiating MCP Handshake for ${id}... Check terminal for logs.`);
+                await fetch(`/extensions/execute?ext_id=${id}`, {method: 'POST'});
+            }
+
+            loadExtensions();
+        </script>
+    </body>
+    </html>
+    """
 
 @app.get("/api/test-connection")
 async def test_api_connection(provider: str):

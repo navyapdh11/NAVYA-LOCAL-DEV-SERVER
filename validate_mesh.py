@@ -45,12 +45,15 @@ async def run_validation():
         # 7. Self-Evolving Core (History)
         results.append(await test_endpoint(client, "WikiLLM Audit History", "/evolve/history"))
 
+        # 8. Extension Portal
+        results.append(await test_endpoint(client, "Extension Registry", "/extensions"))
+
     # Calculate Metrics
     total_score = 0
     print(f"{'Endpoint':<25} | {'Status':<10} | {'Latency':<10} | {'Score'}")
     print("-" * 65)
     
-    # 7 tests, so let's make them roughly 14-15 points each to reach 100
+    # 8 tests, roughly 12.5 points each
     max_score_per_test = 100 / len(results)
     
     for r in results:
