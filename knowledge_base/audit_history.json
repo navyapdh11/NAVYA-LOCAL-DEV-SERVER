@@ -466,5 +466,65 @@
       "moves": 2
     },
     "id": "audit-benchmark-38"
+  },
+  {
+    "timestamp": "2026-04-27T00:00:00.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.ebay.com",
+      "latency_ms": 3438.6,
+      "signals": 3,
+      "moves": 2
+    },
+    "id": "audit-benchmark-39"
+  },
+  {
+    "timestamp": "2026-04-27T00:00:01.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.shopify.com",
+      "latency_ms": 3097.2,
+      "signals": 3,
+      "moves": 2
+    },
+    "id": "audit-benchmark-40"
+  },
+  {
+    "timestamp": "2026-04-27T00:00:02.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.fedex.com",
+      "latency_ms": 3714.0,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-41"
+  },
+  {
+    "timestamp": "2026-04-27T00:00:03.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.ups.com",
+      "latency_ms": 3836.6,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-42"
+  },
+  {
+    "timestamp": "2026-04-27T00:00:04.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.dhl.com",
+      "latency_ms": 3423.3,
+      "signals": 4,
+      "moves": 1
+    },
+    "id": "audit-benchmark-43"
   }
 ]
