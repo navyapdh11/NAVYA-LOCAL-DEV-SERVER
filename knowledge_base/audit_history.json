@@ -1650,5 +1650,61 @@
       "moves": 1
     },
     "id": "audit-benchmark-139"
+  },
+  {
+    "timestamp": "2026-04-27T09:30:00.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.costco.com",
+      "latency_ms": 1544.5,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-140"
+  },
+  {
+    "timestamp": "2026-04-27T09:30:01.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.target.com",
+      "latency_ms": 2056.9,
+      "signals": 3,
+      "moves": 2
+    },
+    "id": "audit-benchmark-141"
+  },
+  {
+    "timestamp": "2026-04-27T09:30:02.000000",
+    "layer": "strategic_intel",
+    "status": "FAILED",
+    "data": {
+      "url": "https://www.bestbuy.com",
+      "latency_ms": 20459.6
+    },
+    "id": "audit-benchmark-142"
+  },
+  {
+    "timestamp": "2026-04-27T09:30:03.000000",
+    "layer": "strategic_intel",
+    "status": "FAILED",
+    "data": {
+      "url": "https://www.homedepot.com",
+      "latency_ms": 788.4
+    },
+    "id": "audit-benchmark-143"
+  },
+  {
+    "timestamp": "2026-04-27T09:30:04.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.lowes.com",
+      "latency_ms": 1539.9,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-144"
   }
 ]
