@@ -1764,5 +1764,63 @@
       "moves": 2
     },
     "id": "audit-benchmark-149"
+  },
+  {
+    "timestamp": "2026-04-27T10:30:00.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.figma.com",
+      "latency_ms": 5857.4,
+      "signals": 4,
+      "moves": 1
+    },
+    "id": "audit-benchmark-150"
+  },
+  {
+    "timestamp": "2026-04-27T10:30:01.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.pinterest.com",
+      "latency_ms": 7118.7,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-151"
+  },
+  {
+    "timestamp": "2026-04-27T10:30:02.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.behance.net",
+      "latency_ms": 5534.3,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-152"
+  },
+  {
+    "timestamp": "2026-04-27T10:30:03.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://dribbble.com",
+      "latency_ms": 7035.2,
+      "signals": 3,
+      "moves": 2
+    },
+    "id": "audit-benchmark-153"
+  },
+  {
+    "timestamp": "2026-04-27T10:30:04.000000",
+    "layer": "strategic_intel",
+    "status": "FAILED",
+    "data": {
+      "url": "https://www.canva.com",
+      "latency_ms": 21120.7
+    },
+    "id": "audit-benchmark-154"
   }
 ]

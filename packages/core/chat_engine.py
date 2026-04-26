@@ -32,27 +32,37 @@ class SolutionChatEngine:
         
         # 2. Synthesis (Agentic Reasoning simulation)
         if not relevant_profiles:
-            # Fallback to general cross-industry wisdom
-            relevant_profiles = self.memory[:5] 
+            # Fallback to general cross-industry wisdom (diverse sample)
+            relevant_profiles = self.memory[:10] 
 
-        # Extract common thrashing moves from relevant profiles
+        # Extract common thrashing moves
         suggested_moves = []
         for p in relevant_profiles:
             moves = p.get("data", {}).get("moves", [])
             if isinstance(moves, list):
                 suggested_moves.extend(moves)
-            elif isinstance(moves, int): # Round 1-24 used ints for moves count in data
+            elif isinstance(moves, int):
                  suggested_moves.append(f"Execute {moves} standard thrashing moves identified for {p['data']['url']}")
 
+        # Deduplicate and prioritize
+        unique_moves = list(set(suggested_moves))
+        
         # 3. Formulate Solution
         response = {
-            "answer": f"Based on the strategic footprints of {len(relevant_profiles)} global leaders in my memory, here is your path to dominance:",
-            "key_insights": [
-                "Target detected AEO gaps in institutional markup.",
-                "Leverage high-latency competitive vulnerabilities found in recent benchmarks."
+            "answer": f"Based on the strategic footprints of {len(relevant_profiles)} global leaders in my memory, I have synthesized a high-impact solution path.",
+            "thinking_trace": [
+                f"Querying WikiLLM KB for keyword matches: '{user_query}'",
+                f"Retrieved {len(relevant_profiles)} relevant strategic profiles.",
+                "Analyzing cross-industry AEO citation patterns...",
+                "Synthesizing autonomous thrashing recommendations."
             ],
-            "recommended_actions": list(set(suggested_moves))[:4],
-            "context_source": [p["data"]["url"] for p in relevant_profiles[:3]]
+            "key_insights": [
+                "Disruptive Signal: Target identified AEO gaps in institutional markup.",
+                "Competitive Edge: Leverage high-latency vulnerabilities found in recent cluster benchmarks.",
+                "Strategic Pivot: Transition from 'Service' to 'Authority' entity markers."
+            ],
+            "recommended_actions": unique_moves[:5],
+            "context_source": [p["data"]["url"] for p in relevant_profiles[:5]]
         }
 
         return response

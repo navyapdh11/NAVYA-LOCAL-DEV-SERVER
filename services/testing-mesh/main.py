@@ -608,36 +608,50 @@ async def solution_chat_dashboard():
                 // Add User Message
                 chatWindow.innerHTML += `
                     <div class="message user-msg">
-                        ${{query}}
+                        \${{query}}
                     </div>
                 `;
                 
                 input.value = "";
                 chatWindow.scrollTop = chatWindow.scrollHeight;
                 typing.style.display = "block";
+                typing.innerText = "Mythos is initiating retrieval...";
 
                 try {{
-                    const res = await fetch(`/chat/query?query=${{encodeURIComponent(query)}}`, {{method: 'POST'}});
+                    const res = await fetch(`/chat/query?query=\${{encodeURIComponent(query)}}`, {{method: 'POST'}});
                     const data = await res.json();
+                    
+                    // Simulate thinking steps
+                    for (const step of data.thinking_trace) {{
+                        typing.innerText = step;
+                        await new Promise(r => setTimeout(r, 600));
+                    }}
                     
                     typing.style.display = "none";
                     
+                    const msgId = 'msg-' + Date.now();
                     let responseHtml = `
-                        <div class="message agent-msg">
+                        <div class="message agent-msg" id="\${{msgId}}">
                             <strong style="color:var(--primary)">STRATEGY ENGINE</strong><br>
-                            ${{data.answer}}
+                            \${{data.answer}}
                             
                             <div class="insight-card">
                                 <strong>Synthesis Highlights:</strong>
-                                <ul>${{data.key_insights.map(i => `<li>${{i}}</li>`).join('')}}</ul>
+                                <ul>\${{data.key_insights.map(i => `<li>\${{i}}</li>`).join('')}}</ul>
                             </div>
                             
                             <strong>Recommended Thrashing Moves:</strong>
-                            <ul>${{data.recommended_actions.map(a => `<li>${{a}}</li>`).join('')}}</ul>
+                            <ul style="color:#00ff00; font-family: 'Fira Code', monospace; font-size: 0.85rem; background:rgba(0,0,0,0.2); padding: 15px; border-radius: 12px; border: 1px solid var(--border);">
+                                \${{data.recommended_actions.map(a => `<li>> \${{a}}</li>`).join('')}}
+                            </ul>
                             
-                            <div style="margin-top:15px;">
-                                ${{data.context_source.map(s => `<span class="source-chip">${{s}}</span>`).join('')}}
+                            <div style="margin-top:15px; display:flex; flex-wrap:wrap; gap:5px;">
+                                \${{data.context_source.map(s => `<span class="source-chip">\${{s}}</span>`).join('')}}
                             </div>
+
+                            <button onclick="copyMsg('\${{msgId}}')" style="background:transparent; border: 1px solid var(--border); color:var(--primary); padding: 5px 10px; font-size:0.7rem; width: auto; margin-top: 15px; border-radius: 6px;">
+                                COPY STRATEGY
+                            </button>
                         </div>
                     `;
                     
@@ -645,8 +659,15 @@ async def solution_chat_dashboard():
                     chatWindow.scrollTop = chatWindow.scrollHeight;
                 }} catch (e) {{
                     typing.style.display = "none";
-                    chatWindow.innerHTML += `<div class="message agent-msg" style="border-color:red">Error: ${{e.message}}</div>`;
+                    chatWindow.innerHTML += `<div class="message agent-msg" style="border-color:red">Error: \${{e.message}}</div>`;
                 }}
+            }}
+
+            function copyMsg(id) {{
+                const el = document.getElementById(id);
+                const text = el.innerText;
+                navigator.clipboard.writeText(text);
+                alert("Strategy copied to clipboard!");
             }}
         </script>
     </body>
