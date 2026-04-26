@@ -1476,5 +1476,61 @@
       "latency_ms": 12540.3
     },
     "id": "audit-benchmark-124"
+  },
+  {
+    "timestamp": "2026-04-27T08:00:00.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.caterpillar.com",
+      "latency_ms": 23913.0,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-125"
+  },
+  {
+    "timestamp": "2026-04-27T08:00:01.000000",
+    "layer": "strategic_intel",
+    "status": "FAILED",
+    "data": {
+      "url": "https://www.deere.com",
+      "latency_ms": 15081.1
+    },
+    "id": "audit-benchmark-126"
+  },
+  {
+    "timestamp": "2026-04-27T08:00:02.000000",
+    "layer": "strategic_intel",
+    "status": "FAILED",
+    "data": {
+      "url": "https://www.3m.com",
+      "latency_ms": 15012.6
+    },
+    "id": "audit-benchmark-127"
+  },
+  {
+    "timestamp": "2026-04-27T08:00:03.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.honeywell.com",
+      "latency_ms": 19350.0,
+      "signals": 5,
+      "moves": 1
+    },
+    "id": "audit-benchmark-128"
+  },
+  {
+    "timestamp": "2026-04-27T08:00:04.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.ge.com",
+      "latency_ms": 20470.4,
+      "signals": 3,
+      "moves": 2
+    },
+    "id": "audit-benchmark-129"
   }
 ]
