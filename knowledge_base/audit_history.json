@@ -718,5 +718,53 @@
       "moves": 1
     },
     "id": "audit-benchmark-59"
+  },
+  {
+    "timestamp": "2026-04-27T01:40:00.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.accenture.com",
+      "latency_ms": 2068.0,
+      "signals": 5,
+      "moves": 1
+    },
+    "id": "audit-benchmark-60"
+  },
+  {
+    "timestamp": "2026-04-27T01:40:01.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www2.deloitte.com",
+      "latency_ms": 2604.7,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-61"
+  },
+  {
+    "timestamp": "2026-04-27T01:40:02.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.bcg.com",
+      "latency_ms": 5750.0,
+      "signals": 4,
+      "moves": 1
+    },
+    "id": "audit-benchmark-62"
+  },
+  {
+    "timestamp": "2026-04-27T01:40:03.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.pwc.com",
+      "latency_ms": 1982.7,
+      "signals": 4,
+      "moves": 1
+    },
+    "id": "audit-benchmark-63"
   }
 ]
