@@ -1306,5 +1306,63 @@
       "moves": 1
     },
     "id": "audit-benchmark-109"
+  },
+  {
+    "timestamp": "2026-04-27T06:30:00.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://techcrunch.com",
+      "latency_ms": 8593.4,
+      "signals": 3,
+      "moves": 2
+    },
+    "id": "audit-benchmark-110"
+  },
+  {
+    "timestamp": "2026-04-27T06:30:01.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.theverge.com",
+      "latency_ms": 6703.9,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-111"
+  },
+  {
+    "timestamp": "2026-04-27T06:30:02.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.wired.com",
+      "latency_ms": 7191.7,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-112"
+  },
+  {
+    "timestamp": "2026-04-27T06:30:03.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.bloomberg.com",
+      "latency_ms": 13659.3,
+      "signals": 3,
+      "moves": 2
+    },
+    "id": "audit-benchmark-113"
+  },
+  {
+    "timestamp": "2026-04-27T06:30:04.000000",
+    "layer": "strategic_intel",
+    "status": "FAILED",
+    "data": {
+      "url": "https://www.reuters.com",
+      "latency_ms": 4617.1
+    },
+    "id": "audit-benchmark-114"
   }
 ]
