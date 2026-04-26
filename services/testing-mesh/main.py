@@ -726,9 +726,9 @@ async def solution_chat_dashboard():
                     typing.style.display = "none";
                     chatWindow.innerHTML += `<div class="message agent-msg" style="border-color:red">Error: \${{e.message}}</div>`;
                 }}
-                }}
+            }}
 
-                function copyMsg(id) {{
+            function copyMsg(id) {{
                 const el = document.getElementById(id);
                 const text = el.innerText;
                 navigator.clipboard.writeText(text);

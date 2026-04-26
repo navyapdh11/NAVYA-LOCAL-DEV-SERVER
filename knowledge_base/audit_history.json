@@ -1882,5 +1882,65 @@
       "moves": 1
     },
     "id": "audit-benchmark-159"
+  },
+  {
+    "timestamp": "2026-04-27T11:30:00.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.spacex.com",
+      "latency_ms": 1525.7,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-160"
+  },
+  {
+    "timestamp": "2026-04-27T11:30:01.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.blueorigin.com",
+      "latency_ms": 1444.6,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-161"
+  },
+  {
+    "timestamp": "2026-04-27T11:30:02.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.planet.com",
+      "latency_ms": 1881.6,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-162"
+  },
+  {
+    "timestamp": "2026-04-27T11:30:03.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.rocketlabusa.com",
+      "latency_ms": 1508.2,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-163"
+  },
+  {
+    "timestamp": "2026-04-27T11:30:04.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.virgingalactic.com",
+      "latency_ms": 5128.0,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-164"
   }
 ]
