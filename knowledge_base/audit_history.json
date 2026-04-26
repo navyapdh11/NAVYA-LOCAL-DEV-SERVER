@@ -682,5 +682,41 @@
       "moves": 1
     },
     "id": "audit-benchmark-56"
+  },
+  {
+    "timestamp": "2026-04-27T01:20:00.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.airbnb.com",
+      "latency_ms": 3517.1,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-57"
+  },
+  {
+    "timestamp": "2026-04-27T01:20:01.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.booking.com",
+      "latency_ms": 1524.5,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-58"
+  },
+  {
+    "timestamp": "2026-04-27T01:20:02.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.marriott.com",
+      "latency_ms": 2180.1,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-59"
   }
 ]
