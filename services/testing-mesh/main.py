@@ -683,7 +683,7 @@ async def solution_chat_dashboard():
                 typing.innerText = "Mythos is initiating retrieval...";
 
                 try {{
-                    const res = await fetch(`/chat/query?query=\${{encodeURIComponent(query)}}`, {{method: 'POST'}});
+                    const res = await fetch(`/chat/query?query=${{encodeURIComponent(query)}}`, {{method: 'POST'}});
                     const data = await res.json();
                     
                     // Simulate thinking steps
@@ -696,25 +696,25 @@ async def solution_chat_dashboard():
                     
                     const msgId = 'msg-' + Date.now();
                     let responseHtml = `
-                        <div class="message agent-msg" id="\${{msgId}}">
+                        <div class="message agent-msg" id="${{msgId}}">
                             <strong style="color:var(--primary)">STRATEGY ENGINE</strong><br>
-                            \${{data.answer}}
+                            ${{data.answer}}
                             
                             <div class="insight-card">
                                 <strong>Synthesis Highlights:</strong>
-                                <ul>\${{data.key_insights.map(i => `<li>\${{i}}</li>`).join('')}}</ul>
+                                <ul>${{data.key_insights.map(i => `<li>${{i}}</li>`).join('')}}</ul>
                             </div>
                             
                             <strong>Recommended Thrashing Moves:</strong>
                             <ul style="color:#00ff00; font-family: 'Fira Code', monospace; font-size: 0.85rem; background:rgba(0,0,0,0.2); padding: 15px; border-radius: 12px; border: 1px solid var(--border);">
-                                \${{data.recommended_actions.map(a => `<li>> \${{a}}</li>`).join('')}}
+                                ${{data.recommended_actions.map(a => `<li>> ${{a}}</li>`).join('')}}
                             </ul>
                             
                             <div style="margin-top:15px; display:flex; flex-wrap:wrap; gap:5px;">
-                                \${{data.context_source.map(s => `<span class="source-chip">\${{s}}</span>`).join('')}}
+                                ${{data.context_source.map(s => `<span class="source-chip">${{s}}</span>`).join('')}}
                             </div>
 
-                            <button onclick="copyMsg('\${{msgId}}')" style="background:transparent; border: 1px solid var(--border); color:var(--primary); padding: 5px 10px; font-size:0.7rem; width: auto; margin-top: 15px; border-radius: 6px;">
+                            <button onclick="copyMsg('${{msgId}}')" style="background:transparent; border: 1px solid var(--border); color:var(--primary); padding: 5px 10px; font-size:0.7rem; width: auto; margin-top: 15px; border-radius: 6px;">
                                 COPY STRATEGY
                             </button>
                         </div>
@@ -724,7 +724,7 @@ async def solution_chat_dashboard():
                     chatWindow.scrollTop = chatWindow.scrollHeight;
                 }} catch (e) {{
                     typing.style.display = "none";
-                    chatWindow.innerHTML += `<div class="message agent-msg" style="border-color:red">Error: \${{e.message}}</div>`;
+                    chatWindow.innerHTML += `<div class="message agent-msg" style="border-color:red">Error: ${{e.message}}</div>`;
                 }}
             }}
 
@@ -733,8 +733,8 @@ async def solution_chat_dashboard():
                 const text = el.innerText;
                 navigator.clipboard.writeText(text);
                 alert("Strategy copied to clipboard!");
-                }}
-                </script>
+            }}
+        </script>
     </body>
     </html>
     """
@@ -807,16 +807,16 @@ async def extension_portal_dashboard():
                     grid.innerHTML += `
                         <div class="ext-card">
                             <div style="display:flex; justify-content:space-between; align-items:start;">
-                                <strong>\${{data.name}}</strong>
-                                <span class="badge">\${{data.version}}</span>
+                                <strong>${{data.name}}</strong>
+                                <span class="badge">${{data.version}}</span>
                             </div>
-                            <p style="font-size:0.85rem; opacity:0.7; margin: 1rem 0;">\${{data.description}}</p>
-                            <span class="status" style="color: \${{isInstalled ? 'var(--accent)' : '#aaa'}}">
-                                \${{isInstalled ? '● Active' : '○ Available'}}
+                            <p style="font-size:0.85rem; opacity:0.7; margin: 1rem 0;">${{data.description}}</p>
+                            <span class="status" style="color: ${{isInstalled ? 'var(--accent)' : '#aaa'}}">
+                                ${{isInstalled ? '● Active' : '○ Available'}}
                             </span>
-                            <button class="\${{isInstalled ? 'installed' : ''}}" 
-                                    onclick="\${{isInstalled ? `executeExt('\${{id}}')` : `installExt('\${{id}}')`}}">
-                                \${{isInstalled ? 'Run Extension' : 'Install into Mesh'}}
+                            <button class="${{isInstalled ? 'installed' : ''}}" 
+                                    onclick="${{isInstalled ? `executeExt('${{id}}')` : `installExt('${{id}}')`}}">
+                                ${{isInstalled ? 'Run Extension' : 'Install into Mesh'}}
                             </button>
                         </div>
                     `;
