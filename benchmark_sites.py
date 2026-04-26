@@ -6,11 +6,11 @@ from typing import List, Dict
 
 BASE_URL = "http://localhost:8081"
 TARGET_SITES = [
-    "https://www.reddit.com",
-    "https://www.linkedin.com",
-    "https://www.spotify.com",
-    "https://www.uber.com",
-    "https://www.netflix.com"
+    "https://mistral.ai",
+    "https://www.cohere.com",
+    "https://huggingface.co",
+    "https://www.snowflake.com",
+    "https://www.databricks.com"
 ]
 
 async def analyze_site(client: httpx.AsyncClient, url: str) -> Dict:

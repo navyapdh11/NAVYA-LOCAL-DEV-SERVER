@@ -226,5 +226,65 @@
       "moves": 2
     },
     "id": "audit-benchmark-18"
+  },
+  {
+    "timestamp": "2026-04-26T22:45:00.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://mistral.ai",
+      "latency_ms": 2716.6,
+      "signals": 4,
+      "moves": 1
+    },
+    "id": "audit-benchmark-19"
+  },
+  {
+    "timestamp": "2026-04-26T22:45:01.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.cohere.com",
+      "latency_ms": 2866.7,
+      "signals": 4,
+      "moves": 1
+    },
+    "id": "audit-benchmark-20"
+  },
+  {
+    "timestamp": "2026-04-26T22:45:02.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://huggingface.co",
+      "latency_ms": 2142.7,
+      "signals": 3,
+      "moves": 2
+    },
+    "id": "audit-benchmark-21"
+  },
+  {
+    "timestamp": "2026-04-26T22:45:03.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.snowflake.com",
+      "latency_ms": 3633.8,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-22"
+  },
+  {
+    "timestamp": "2026-04-26T22:45:04.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.databricks.com",
+      "latency_ms": 2343.9,
+      "signals": 4,
+      "moves": 1
+    },
+    "id": "audit-benchmark-23"
   }
 ]
