@@ -8,10 +8,16 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../.
 
 from packages.core.engine import SuperAgentHarness
 from packages.core.intelligence import StrategicIntelligenceEngine
+from packages.seo_agent.thrashing_engine import CompetitorThrashingEngine
+from packages.test_sprite.auto_tester import TestSpriteAgent
+from packages.self_evolving.core import SelfEvolvingCore
 
 app = FastAPI(title="NAVYA MYTHOS Dashboard")
 agent = SuperAgentHarness()
 intel_engine = StrategicIntelligenceEngine()
+thrashing_engine = CompetitorThrashingEngine("localhost:8081")
+test_sprite = TestSpriteAgent()
+master_core = SelfEvolvingCore(mythos_engine=agent)
 
 # In-memory store for API connections
 api_connections = {
@@ -397,6 +403,24 @@ async def intelligence_dashboard():
     </body>
     </html>
     """
+
+@app.post("/evolve/run-test")
+def run_evolved_test(layer: str, task: str):
+    # Determine which agent func to run
+    if "Audit" in task or "Integrity" in task:
+        test_func = test_sprite.run_multi_layer_audit
+    else:
+        test_func = lambda: agent.run_agentic_loop(task)
+        
+    return master_core.run_evolved_test(layer, test_func)
+
+@app.get("/evolve/history")
+def get_evolve_history():
+    return {
+        "audit_count": len(master_core.librarian.audit_log),
+        "knowledge_level": master_core.trainer.learning_progress,
+        "logs": master_core.librarian.audit_log[-10:] # Last 10
+    }
 
 @app.get("/api/test-connection")
 async def test_api_connection(provider: str):
