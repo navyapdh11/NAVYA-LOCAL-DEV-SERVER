@@ -406,5 +406,65 @@
       "moves": 1
     },
     "id": "audit-benchmark-33"
+  },
+  {
+    "timestamp": "2026-04-26T23:40:00.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://vercel.com",
+      "latency_ms": 2858.6,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-34"
+  },
+  {
+    "timestamp": "2026-04-26T23:40:01.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.netlify.com",
+      "latency_ms": 3338.4,
+      "signals": 3,
+      "moves": 1
+    },
+    "id": "audit-benchmark-35"
+  },
+  {
+    "timestamp": "2026-04-26T23:40:02.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://supabase.com",
+      "latency_ms": 2464.0,
+      "signals": 4,
+      "moves": 2
+    },
+    "id": "audit-benchmark-36"
+  },
+  {
+    "timestamp": "2026-04-26T23:40:03.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.heroku.com",
+      "latency_ms": 4456.0,
+      "signals": 9,
+      "moves": 1
+    },
+    "id": "audit-benchmark-37"
+  },
+  {
+    "timestamp": "2026-04-26T23:40:04.000000",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.digitalocean.com",
+      "latency_ms": 2840.2,
+      "signals": 3,
+      "moves": 2
+    },
+    "id": "audit-benchmark-38"
   }
 ]
