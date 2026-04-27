@@ -56,6 +56,14 @@ class ExtensionRegistry:
                 "description": "Advanced multi-modal analysis for UI/UX competitive benchmarking.",
                 "status": "ready_to_install",
                 "mcp_capable": True
+            },
+            "smithery_ai": {
+                "name": "Smithery.ai",
+                "version": "1.0.0",
+                "category": "Marketplace",
+                "description": "Universal App Store for finding and installing MCP servers.",
+                "status": "ready_to_install",
+                "mcp_capable": True
             }
         }
         self.call_history = []
