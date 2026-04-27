@@ -2265,5 +2265,57 @@
       "enterprise": 1,
       "pricing": 0
     }
+  },
+  {
+    "timestamp": "2026-04-27T20:28:40.706120",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.google.com",
+      "latency_ms": 1081.242322921753,
+      "signals": 3,
+      "moves": 1,
+      "enterprise": 0,
+      "pricing": 0
+    }
+  },
+  {
+    "timestamp": "2026-04-27T20:28:40.706148",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.netflix.com",
+      "latency_ms": 2935.533285140991,
+      "signals": 3,
+      "moves": 2,
+      "enterprise": 0,
+      "pricing": 1
+    }
+  },
+  {
+    "timestamp": "2026-04-27T20:28:40.706155",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.spotify.com",
+      "latency_ms": 1218.78981590271,
+      "signals": 3,
+      "moves": 1,
+      "enterprise": 0,
+      "pricing": 0
+    }
+  },
+  {
+    "timestamp": "2026-04-27T20:28:40.706158",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.nike.com",
+      "latency_ms": 2277.7974605560303,
+      "signals": 3,
+      "moves": 1,
+      "enterprise": 0,
+      "pricing": 0
+    }
   }
 ]
