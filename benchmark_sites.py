@@ -2,6 +2,9 @@ import httpx
 import asyncio
 import time
 import pandas as pd
+import json
+import os
+import datetime
 from typing import List, Dict
 
 BASE_URL = "http://localhost:8081"
@@ -12,6 +15,38 @@ TARGET_SITES = [
     "https://www.chubb.com",
     "https://www.metlife.com"
 ]
+
+def update_persistent_memory(results: List[Dict]):
+    history_path = "knowledge_base/audit_history.json"
+    if not os.path.exists(history_path):
+        history = []
+    else:
+        with open(history_path, "r") as f:
+            try:
+                history = json.load(f)
+            except:
+                history = []
+    
+    for r in results:
+        if r["status"] == "SUCCESS":
+            entry = {
+                "timestamp": datetime.datetime.now().isoformat(),
+                "layer": "strategic_intel",
+                "status": "SUCCESS",
+                "data": {
+                    "url": r["url"],
+                    "latency_ms": r["latency_ms"],
+                    "signals": r["signals"],
+                    "moves": r["moves"],
+                    "enterprise": r["enterprise"],
+                    "pricing": r["pricing"]
+                }
+            }
+            history.append(entry)
+    
+    with open(history_path, "w") as f:
+        json.dump(history, f, indent=2)
+    print(f"\n💾 Persistent memory updated: {len([r for r in results if r['status'] == 'SUCCESS'])} new records added.")
 
 async def analyze_site(client: httpx.AsyncClient, url: str) -> Dict:
     start = time.time()
@@ -72,6 +107,9 @@ async def run_benchmark():
         success_rate = len(df) / len(TARGET_SITES)
         score = (success_rate * 40) + (df['signals'].mean() * 15)
         print(f"\nFINAL STRATEGIC READINESS SCORE: {min(100, score):.0f}/100")
+        
+        # Update persistent knowledge base
+        update_persistent_memory(results)
     else:
         print("\n❌ Benchmark failed: No successful extractions.")
 

@@ -84,6 +84,14 @@ class ExtensionRegistry:
         if extension_id not in self.extensions or self.extensions[extension_id]["status"] != "installed":
             return {"error": "Extension not installed or active."}
         
+        # Integration with real adapters if available
+        if extension_id == "smithery_ai":
+            from packages.extensions.smithery_adapter import SmitheryAdapter
+            if payload.get("action") == "fetch_tools":
+                return await SmitheryAdapter.fetch_tools()
+            elif payload.get("action") == "get_manifest":
+                return await SmitheryAdapter.get_tool_manifest(payload.get("tool_id"))
+        
         call_entry = {
             "timestamp": datetime.datetime.now().isoformat(),
             "extension": extension_id,

@@ -12,7 +12,12 @@ from packages.seo_agent.thrashing_engine import CompetitorThrashingEngine
 from packages.test_sprite.auto_tester import TestSpriteAgent
 from packages.self_evolving.core import SelfEvolvingCore
 from packages.extensions.registry import ExtensionRegistry
+from packages.extensions.smithery_adapter import SmitheryAdapter
+from packages.integration.github_client import GitHubIntegration
+from packages.integration.api_gateway import APIGateway
+
 from packages.seo_agent.hyperlocal import HyperlocalSEOAgent
+
 from packages.core.compliance import ComplianceLegalAgent
 from packages.core.chat_engine import SolutionChatEngine
 
@@ -1088,9 +1093,29 @@ def get_extensions():
 def install_ext(ext_id: str):
     return ext_portal.install_extension(ext_id)
 
+from fastapi import Body
+
 @app.post("/extensions/execute")
-async def execute_ext(ext_id: str, payload: dict = {}):
+async def execute_ext(ext_id: str, payload: dict = Body(default={})):
     return await ext_portal.execute_extension(ext_id, payload)
+
+@app.post("/api/forward")
+async def forward_api_request(
+    url: str = Body(...), 
+    method: str = Body(default="GET"), 
+    payload: dict = Body(default=None)
+):
+    return await APIGateway.forward_request(url, method, payload)
+
+@app.get("/github/repo-info")
+async def get_github_repo(repo: str):
+    github = GitHubIntegration()
+    return github.get_repo_info(repo)
+
+@app.post("/github/trigger-workflow")
+async def trigger_workflow(repo: str, workflow_id: str):
+    github = GitHubIntegration()
+    return github.trigger_action(repo, workflow_id)
 
 if __name__ == "__main__":
     import uvicorn

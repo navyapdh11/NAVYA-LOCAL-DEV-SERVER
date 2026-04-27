@@ -48,6 +48,12 @@ async def run_validation():
         # 8. Extension Portal
         results.append(await test_endpoint(client, "Extension Registry", "/extensions"))
 
+        # 9. GitHub Integration (Repo Info)
+        results.append(await test_endpoint(client, "GitHub Repo Info", "/github/repo-info", params={"repo": "navyapdh11/NAVYA-LOCAL-DEV-SERVER"}))
+
+        # 10. API Gateway (Forwarding test to localhost health)
+        results.append(await test_endpoint(client, "API Gateway Forward", "/api/forward", method="POST", data={"url": f"{BASE_URL}/health"}))
+
     # Calculate Metrics
     total_score = 0
     print(f"{'Endpoint':<25} | {'Status':<10} | {'Latency':<10} | {'Score'}")
