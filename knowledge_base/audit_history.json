@@ -2317,5 +2317,44 @@
       "enterprise": 0,
       "pricing": 0
     }
+  },
+  {
+    "timestamp": "2026-04-27T20:36:07.898081",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.samsung.com",
+      "latency_ms": 1361.8626594543457,
+      "signals": 3,
+      "moves": 1,
+      "enterprise": 0,
+      "pricing": 0
+    }
+  },
+  {
+    "timestamp": "2026-04-27T20:36:07.898111",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.toyota.com",
+      "latency_ms": 2517.857074737549,
+      "signals": 3,
+      "moves": 2,
+      "enterprise": 0,
+      "pricing": 1
+    }
+  },
+  {
+    "timestamp": "2026-04-27T20:36:07.898121",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.coca-cola.com",
+      "latency_ms": 1467.4499034881592,
+      "signals": 3,
+      "moves": 1,
+      "enterprise": 0,
+      "pricing": 0
+    }
   }
 ]
