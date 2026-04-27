@@ -9,11 +9,11 @@ from typing import List, Dict
 
 BASE_URL = "http://localhost:8081"
 TARGET_SITES = [
-    "https://www.allianz.com",
-    "https://www.axa.com",
-    "https://www.prudential.com",
-    "https://www.chubb.com",
-    "https://www.metlife.com"
+    "https://www.apple.com",
+    "https://www.microsoft.com",
+    "https://www.amazon.com",
+    "https://www.tesla.com",
+    "https://www.jpmorganchase.com"
 ]
 
 def update_persistent_memory(results: List[Dict]):

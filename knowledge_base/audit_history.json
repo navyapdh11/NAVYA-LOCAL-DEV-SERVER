@@ -2213,5 +2213,57 @@
       "enterprise": 0,
       "pricing": 0
     }
+  },
+  {
+    "timestamp": "2026-04-27T20:26:49.218847",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.apple.com",
+      "latency_ms": 1025.3894329071045,
+      "signals": 3,
+      "moves": 2,
+      "enterprise": 0,
+      "pricing": 1
+    }
+  },
+  {
+    "timestamp": "2026-04-27T20:26:49.218866",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.microsoft.com",
+      "latency_ms": 861.3460063934326,
+      "signals": 4,
+      "moves": 1,
+      "enterprise": 0,
+      "pricing": 0
+    }
+  },
+  {
+    "timestamp": "2026-04-27T20:26:49.218870",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.amazon.com",
+      "latency_ms": 754.4252872467041,
+      "signals": 3,
+      "moves": 1,
+      "enterprise": 0,
+      "pricing": 0
+    }
+  },
+  {
+    "timestamp": "2026-04-27T20:26:49.218873",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.jpmorganchase.com",
+      "latency_ms": 1571.1820125579834,
+      "signals": 3,
+      "moves": 1,
+      "enterprise": 1,
+      "pricing": 0
+    }
   }
 ]
