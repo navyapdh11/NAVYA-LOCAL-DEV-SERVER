@@ -829,6 +829,10 @@ async def extension_portal_dashboard():
         <div class="container">
             <div class="glass">
                 <h1>Agentic <span style="color:var(--primary)">Extension</span> Portal</h1>
+                <p style="opacity:0.6">
+                    <a href="/diagnostics" style="color:var(--primary); margin-right:1rem;">Network Diagnostics</a>
+                    <a href="/logs" style="color:var(--primary);">System Logs</a>
+                </p>
                 <p style="opacity:0.6">Discover and integrate 2026 enterprise-grade MCP tools and autonomous agents.</p>
             </div>
 

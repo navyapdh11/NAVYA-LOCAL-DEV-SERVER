@@ -32,6 +32,30 @@ class ExtensionRegistry:
                 "description": "Chinese R&D vision-based autonomous browser navigation.",
                 "status": "ready_to_install",
                 "mcp_capable": True
+            },
+            "deepseek_research_agent": {
+                "name": "DeepSeek Research Agent",
+                "version": "2026.04.1",
+                "category": "Research",
+                "description": "Autonomous deep-dive research agent for complex market analysis.",
+                "status": "ready_to_install",
+                "mcp_capable": True
+            },
+            "perplexity_sync": {
+                "name": "Perplexity Sync Tool",
+                "version": "1.0.8",
+                "category": "Data",
+                "description": "Real-time synchronization with Perplexity Pro search indices.",
+                "status": "ready_to_install",
+                "mcp_capable": True
+            },
+            "anthropic_vision_analyser": {
+                "name": "Anthropic Vision Analyser",
+                "version": "3.5.0",
+                "category": "Vision",
+                "description": "Advanced multi-modal analysis for UI/UX competitive benchmarking.",
+                "status": "ready_to_install",
+                "mcp_capable": True
             }
         }
         self.call_history = []
