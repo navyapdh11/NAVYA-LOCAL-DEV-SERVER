@@ -2073,5 +2073,20 @@
       "readiness_score": 74
     },
     "id": "audit-benchmark-175"
+  },
+  {
+    "timestamp": "2026-04-27T12:30:00.000000",
+    "layer": "strategic_intel",
+    "status": "BATCH_RUN",
+    "data": {
+      "avg_latency_ms": 4219.34,
+      "success_rate": 0.6,
+      "enterprise_penetration": 0.67,
+      "pricing_transparency": 0.33,
+      "avg_signals": 3.3,
+      "total_moves": 4,
+      "readiness_score": 74
+    },
+    "id": "audit-benchmark-176"
   }
 ]
