@@ -2616,5 +2616,57 @@
       "enterprise": 0,
       "pricing": 0
     }
+  },
+  {
+    "timestamp": "2026-04-29T19:26:27.835055",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.nvidia.com",
+      "latency_ms": 2842.6408767700195,
+      "signals": 12,
+      "moves": 1,
+      "enterprise": 1,
+      "pricing": 0
+    }
+  },
+  {
+    "timestamp": "2026-04-29T19:26:27.835104",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.amd.com",
+      "latency_ms": 1348.0415344238281,
+      "signals": 4,
+      "moves": 1,
+      "enterprise": 1,
+      "pricing": 0
+    }
+  },
+  {
+    "timestamp": "2026-04-29T19:26:27.835119",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.qualcomm.com",
+      "latency_ms": 584.4707489013672,
+      "signals": 3,
+      "moves": 1,
+      "enterprise": 0,
+      "pricing": 0
+    }
+  },
+  {
+    "timestamp": "2026-04-29T19:26:27.835128",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.broadcom.com",
+      "latency_ms": 624.8669624328613,
+      "signals": 3,
+      "moves": 1,
+      "enterprise": 0,
+      "pricing": 0
+    }
   }
 ]
