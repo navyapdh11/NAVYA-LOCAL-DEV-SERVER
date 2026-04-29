@@ -2512,5 +2512,109 @@
       "enterprise": 0,
       "pricing": 0
     }
+  },
+  {
+    "timestamp": "2026-04-29T15:07:44.610314",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.nvidia.com",
+      "latency_ms": 2403.693437576294,
+      "signals": 12,
+      "moves": 1,
+      "enterprise": 1,
+      "pricing": 0
+    }
+  },
+  {
+    "timestamp": "2026-04-29T15:07:44.610342",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.amd.com",
+      "latency_ms": 890.0253772735596,
+      "signals": 4,
+      "moves": 1,
+      "enterprise": 1,
+      "pricing": 0
+    }
+  },
+  {
+    "timestamp": "2026-04-29T15:07:44.610352",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.qualcomm.com",
+      "latency_ms": 918.494462966919,
+      "signals": 3,
+      "moves": 1,
+      "enterprise": 0,
+      "pricing": 0
+    }
+  },
+  {
+    "timestamp": "2026-04-29T15:07:44.610357",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.broadcom.com",
+      "latency_ms": 1053.3170700073242,
+      "signals": 3,
+      "moves": 1,
+      "enterprise": 0,
+      "pricing": 0
+    }
+  },
+  {
+    "timestamp": "2026-04-29T19:22:38.660389",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.nvidia.com",
+      "latency_ms": 3842.0634269714355,
+      "signals": 12,
+      "moves": 1,
+      "enterprise": 1,
+      "pricing": 0
+    }
+  },
+  {
+    "timestamp": "2026-04-29T19:22:38.660405",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.amd.com",
+      "latency_ms": 1661.6291999816895,
+      "signals": 4,
+      "moves": 1,
+      "enterprise": 1,
+      "pricing": 0
+    }
+  },
+  {
+    "timestamp": "2026-04-29T19:22:38.660410",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.qualcomm.com",
+      "latency_ms": 1199.0289688110352,
+      "signals": 3,
+      "moves": 1,
+      "enterprise": 0,
+      "pricing": 0
+    }
+  },
+  {
+    "timestamp": "2026-04-29T19:22:38.660413",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.broadcom.com",
+      "latency_ms": 3932.232141494751,
+      "signals": 3,
+      "moves": 1,
+      "enterprise": 0,
+      "pricing": 0
+    }
   }
 ]
