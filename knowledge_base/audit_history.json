@@ -2408,5 +2408,57 @@
       "enterprise": 1,
       "pricing": 0
     }
+  },
+  {
+    "timestamp": "2026-04-29T10:58:56.552139",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://stripe.com",
+      "latency_ms": 1066.91312789917,
+      "signals": 5,
+      "moves": 2,
+      "enterprise": 1,
+      "pricing": 1
+    }
+  },
+  {
+    "timestamp": "2026-04-29T10:58:56.552149",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.cloudflare.com",
+      "latency_ms": 1422.4910736083984,
+      "signals": 3,
+      "moves": 1,
+      "enterprise": 0,
+      "pricing": 0
+    }
+  },
+  {
+    "timestamp": "2026-04-29T10:58:56.552152",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://kubernetes.io",
+      "latency_ms": 914.4351482391357,
+      "signals": 4,
+      "moves": 1,
+      "enterprise": 1,
+      "pricing": 0
+    }
+  },
+  {
+    "timestamp": "2026-04-29T10:58:56.552155",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.terraform.io",
+      "latency_ms": 1165.2400493621826,
+      "signals": 3,
+      "moves": 1,
+      "enterprise": 0,
+      "pricing": 0
+    }
   }
 ]
