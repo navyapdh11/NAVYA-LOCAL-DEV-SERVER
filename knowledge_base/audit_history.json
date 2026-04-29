@@ -2356,5 +2356,57 @@
       "enterprise": 0,
       "pricing": 0
     }
+  },
+  {
+    "timestamp": "2026-04-29T10:55:25.184279",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.python.org",
+      "latency_ms": 484.5092296600342,
+      "signals": 4,
+      "moves": 1,
+      "enterprise": 0,
+      "pricing": 0
+    }
+  },
+  {
+    "timestamp": "2026-04-29T10:55:25.184377",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.rust-lang.org",
+      "latency_ms": 829.6890258789062,
+      "signals": 3,
+      "moves": 1,
+      "enterprise": 1,
+      "pricing": 0
+    }
+  },
+  {
+    "timestamp": "2026-04-29T10:55:25.184416",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.nodejs.org",
+      "latency_ms": 903.8093090057373,
+      "signals": 3,
+      "moves": 1,
+      "enterprise": 0,
+      "pricing": 0
+    }
+  },
+  {
+    "timestamp": "2026-04-29T10:55:25.184440",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.mongodb.com",
+      "latency_ms": 2167.3731803894043,
+      "signals": 3,
+      "moves": 1,
+      "enterprise": 1,
+      "pricing": 0
+    }
   }
 ]

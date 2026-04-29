@@ -47,8 +47,10 @@ class StrategicIntelligenceEngine:
                         "h1": [h1.get_text() for h1 in soup.find_all('h1')]
                     }
                 }
+            except httpx.HTTPStatusError as e:
+                return {"url": url, "status": "failed", "error": f"HTTP {e.response.status_code}: {e.response.reason_phrase}"}
             except Exception as e:
-                return {"url": url, "status": "failed", "error": str(e)}
+                return {"url": url, "status": "failed", "error": f"{type(e).__name__}: {str(e)}"}
 
     def analyze_strategy(self, semantic_data: Dict[str, Any]) -> Dict[str, Any]:
         """

@@ -9,15 +9,16 @@ from typing import List, Dict
 
 BASE_URL = "http://localhost:8081"
 TARGET_SITES = [
-    "https://www.samsung.com",
-    "https://www.toyota.com",
-    "https://www.coca-cola.com",
-    "https://www.disney.com",
-    "https://www.sony.com"
+    "https://www.wikipedia.org",
+    "https://www.python.org",
+    "https://www.rust-lang.org",
+    "https://www.nodejs.org",
+    "https://www.mongodb.com"
 ]
 
 def update_persistent_memory(results: List[Dict]):
-    history_path = "knowledge_base/audit_history.json"
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    history_path = os.path.join(script_dir, "knowledge_base/audit_history.json")
     if not os.path.exists(history_path):
         history = []
     else:
@@ -66,9 +67,10 @@ async def analyze_site(client: httpx.AsyncClient, url: str) -> Dict:
                 "enterprise": 1 if data["strategy"]["signals"].get("enterprise_focus") else 0,
                 "pricing": 1 if data["strategy"]["signals"].get("pricing_detected") else 0
             }
-        return {"url": url, "status": f"FAILED ({data.get('status', 'unknown')})", "latency_ms": latency}
+        error_msg = data.get('error', data.get('status', 'unknown'))
+        return {"url": url, "status": f"FAILED ({error_msg})", "latency_ms": latency}
     except Exception as e:
-        return {"url": url, "status": f"ERROR: {str(e)[:20]}", "latency_ms": 0}
+        return {"url": url, "status": f"ERROR: {str(e)[:40]}", "latency_ms": 0}
 
 async def run_benchmark():
     print(f"--- 🚀 NAVYA MYTHOS: MULTI-SITE STRATEGY BENCHMARK ({len(TARGET_SITES)} SITES) ---")
