@@ -1,20 +1,21 @@
 import json
 import os
-import re
-from typing import Dict, List, Any
+from typing import Any, Dict, List
+
 
 class SolutionChatEngine:
     """
     2026 Advanced RAG Chat Engine for Strategic Solutions & Design.
     Queries the persistent WikiLLM knowledge base and provides deep-layered, 32k-context synthesis.
     """
+
     def __init__(self, kb_path: str = "knowledge_base/audit_history.json"):
         if not os.path.isabs(kb_path):
             script_dir = os.path.dirname(os.path.abspath(__file__))
             self.kb_path = os.path.join(script_dir, "../../", kb_path)
         else:
             self.kb_path = kb_path
-            
+
         self.memory = self._load_kb()
         self.presets = self._init_presets()
 
@@ -86,7 +87,7 @@ class SolutionChatEngine:
 .badge { font-size: 0.7rem; font-weight: 800; color: var(--primary); letter-spacing: 0.1em; }
 </style>
 ```
-"""
+""",
             },
             "aeo_strategy_2026": {
                 "title": "2026 Answer Engine Optimization (AEO) Blueprint",
@@ -98,23 +99,33 @@ class SolutionChatEngine:
 2. **Micro-Contextual Citations:** Ensure every paragraph has machine-readable entity markers.
 3. **Fragmented Content Architecture:** Break long-form into query-responsive nodes.
 4. **Latency Thresholds:** Responses must be served < 200ms for LPU-based scrapers.
-"""
-            }
+""",
+            },
         }
 
     def _generate_synthesis(self, user_query: str, relevant_profiles: List[Dict]) -> Dict[str, Any]:
         """Core synthesis engine for 32k-context-ready responses."""
-        
+
         # Calculate Aggregates
         urls = [p["data"].get("url", "unknown") for p in relevant_profiles if "data" in p]
-        latencies = [p["data"].get("latency_ms", 0) for p in relevant_profiles if "data" in p and "latency_ms" in p["data"]]
-        signals = [p["data"].get("signals", 0) for p in relevant_profiles if "data" in p and "signals" in p["data"]]
-        
+        latencies = [
+            p["data"].get("latency_ms", 0)
+            for p in relevant_profiles
+            if "data" in p and "latency_ms" in p["data"]
+        ]
+        signals = [
+            p["data"].get("signals", 0)
+            for p in relevant_profiles
+            if "data" in p and "signals" in p["data"]
+        ]
+
         avg_lat = sum(latencies) / len(latencies) if latencies else 0
         max_signals = max(signals) if signals else 0
-        
+
         # Identify key competitors (those with most signals)
-        competitors = sorted(relevant_profiles, key=lambda x: x["data"].get("signals", 0), reverse=True)
+        competitors = sorted(
+            relevant_profiles, key=lambda x: x["data"].get("signals", 0), reverse=True
+        )
         unique_top_sites = []
         for c in competitors:
             url = c["data"].get("url")
@@ -123,7 +134,9 @@ class SolutionChatEngine:
             if len(unique_top_sites) >= 3:
                 break
 
-        executive_summary = f"I have analyzed {len(relevant_profiles)} strategic nodes related to '{user_query}'. "
+        executive_summary = (
+            f"I have analyzed {len(relevant_profiles)} strategic nodes related to '{user_query}'. "
+        )
         executive_summary += f"The current market environment shows an average strategic latency of {avg_lat:.2f}ms. "
         executive_summary += f"High-density signals detected across {len(unique_top_sites)} key entities including {', '.join(unique_top_sites)}."
 
@@ -131,13 +144,17 @@ class SolutionChatEngine:
         technical_deep_dive += "Architecture optimization should prioritize sub-500ms response times to maintain AEO dominance. "
         technical_deep_dive += "Detected shifts in competitor thrashing patterns suggest a move towards localized entity-graph injections."
 
-        deployment_manifest = "```json\n{\n  \"aeo_optimization\": \"active\",\n  \"target_latency\": \"<500ms\",\n  \"schema_standard\": \"ISO-2026-X\",\n  \"signals_injected\": " + str(max_signals + 2) + "\n}\n```"
+        deployment_manifest = (
+            '```json\n{\n  "aeo_optimization": "active",\n  "target_latency": "<500ms",\n  "schema_standard": "ISO-2026-X",\n  "signals_injected": '
+            + str(max_signals + 2)
+            + "\n}\n```"
+        )
 
         return {
             "executive_summary": executive_summary,
             "technical_deep_dive": technical_deep_dive,
             "deployment_manifest": deployment_manifest,
-            "citations": list(set(urls[:10]))
+            "citations": list(set(urls[:10])),
         }
 
     def _format_preset_response(self, preset: Dict, role: str) -> Dict:
@@ -148,26 +165,26 @@ class SolutionChatEngine:
                 f"Detecting request for {role} capabilities...",
                 "Loading 2026 Industry Best Practice Preset...",
                 "Structuring deployment-ready manifest...",
-                "Finalizing code-block integrity."
+                "Finalizing code-block integrity.",
             ],
             "key_insights": [
                 "Architecture: Modular CSS Variables for system-wide consistency.",
                 "Performance: Optimized for zero-latency agentic feedback.",
-                "Compliance: Meets 2026 high-performance accessibility standards."
+                "Compliance: Meets 2026 high-performance accessibility standards.",
             ],
             "recommended_actions": [
                 "Copy the CSS Variables into your root :root selector.",
                 "Apply 'backdrop-filter: blur(20px)' to all container surfaces.",
                 "Use the provided 'mythos-card' component for agentic interaction points.",
-                "Ensure Inter Tight is loaded as the primary typeface."
+                "Ensure Inter Tight is loaded as the primary typeface.",
             ],
-            "context_source": ["NAVYA 2026 DESIGN SYSTEM", "WIKILLM BEST PRACTICES"]
+            "context_source": ["NAVYA 2026 DESIGN SYSTEM", "WIKILLM BEST PRACTICES"],
         }
 
     def query_solutions(self, user_query: str) -> Dict[str, Any]:
         """Enhanced synthesis engine with 300,000-token sliding window context retrieval."""
         query_lower = user_query.lower()
-        
+
         # 1. Preset Detection
         if "ux" in query_lower or "ui" in query_lower:
             preset = self.presets["ux_ui_2026"]
@@ -181,25 +198,29 @@ class SolutionChatEngine:
             search_blob = json.dumps(entry).lower()
             if any(word in search_blob for word in query_lower.split() if len(word) > 3):
                 relevant_profiles.append(entry)
-        
+
         # Aggregate massive context (up to 750 entries to simulate 300k token depth)
         if len(relevant_profiles) < 500:
             additional_context = self.memory[-750:]
             relevant_profiles.extend([p for p in additional_context if p not in relevant_profiles])
-        
+
         relevant_profiles = relevant_profiles[:750]
-        
+
         # 3. Full-Context Synthesis (Ultra-Exhaustive Analysis)
         synthesis = self._generate_synthesis(user_query, relevant_profiles)
-        
+
         # Construct Ultra-Comprehensive Answer
         full_answer = f"### 🌌 300K-CONTEXT HYPER-STRATEGIC SYNTHESIS: {user_query.upper()}\n\n"
         full_answer += f"#### 🏛️ EXECUTIVE STRATEGY SUMMARY\n{synthesis['executive_summary']}\n\n"
-        full_answer += f"#### ⚙️ TECHNICAL ARCHITECTURE DEEP DIVE\n{synthesis['technical_deep_dive']}\n\n"
+        full_answer += (
+            f"#### ⚙️ TECHNICAL ARCHITECTURE DEEP DIVE\n{synthesis['technical_deep_dive']}\n\n"
+        )
         full_answer += "#### 📡 COMPETITIVE LANDSCAPE & SIGNAL DENSITY\n"
         full_answer += f"My neural scan across a massive {len(relevant_profiles)} strategic nodes has identified a high-fidelity signal cluster. "
         full_answer += "The deployment of ISO-2026-X schemas and agentic-first protocols is mandatory to counteract the detected competitor thrashing moves.\n\n"
-        full_answer += f"#### 🛠️ DEPLOYMENT MANIFEST (PRODUCTION READY)\n{synthesis['deployment_manifest']}\n\n"
+        full_answer += (
+            f"#### 🛠️ DEPLOYMENT MANIFEST (PRODUCTION READY)\n{synthesis['deployment_manifest']}\n\n"
+        )
         full_answer += "#### ⚖️ GOVERNANCE & COMPLIANCE MARKERS\n"
         full_answer += "System aligned with EU AI Act (2026) and India DPDP Act. Hyperlocal entity markers optimized for neighborhood-level dominance."
 
@@ -209,17 +230,17 @@ class SolutionChatEngine:
                 "Initializing 300,000 token hyper-context window...",
                 f"Ingesting {len(relevant_profiles)} nodes from WikiLLM Librarian...",
                 "Executing multi-layer cross-correlation analysis...",
-                "Synthesizing ultra-exhaustive strategic response."
+                "Synthesizing ultra-exhaustive strategic response.",
             ],
             "key_insights": [
                 f"Context Depth: 300,000 tokens synthesized from {len(relevant_profiles)} nodes.",
                 "Market Signal: Dominant shift towards decentralized agentic nodes.",
-                "Compliance: Full 2026 Enterprise Governance alignment."
+                "Compliance: Full 2026 Enterprise Governance alignment.",
             ],
             "recommended_actions": [
                 "Deploy the Hyper-Strategic manifest to all edge nodes.",
                 "Perform a deep-layer audit on the identified signal clusters.",
-                "Update the Engram Memory with this 300k-context synthesis."
+                "Update the Engram Memory with this 300k-context synthesis.",
             ],
-            "context_source": synthesis['citations']
+            "context_source": synthesis["citations"],
         }

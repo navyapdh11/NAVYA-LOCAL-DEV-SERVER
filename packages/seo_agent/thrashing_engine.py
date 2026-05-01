@@ -1,11 +1,13 @@
 from typing import Dict, List
 
+
 class CompetitorThrashingEngine:
     """
     2026 Semantic Dominance & Citation Gap Analysis Engine.
     Simulates Amadora.ai / NoimosAI workflows to thrash competitors
     in LLM generated answers (AEO/GEO).
     """
+
     def __init__(self, target_domain: str):
         self.target_domain = target_domain
         self.competitors = []
@@ -23,9 +25,9 @@ class CompetitorThrashingEngine:
             "auto_optimization_advice": (
                 "Inject 'ISO-2026-X Enterprise Sanitization' schema into all location pages. "
                 "Current LLMs (DeepSeek, Qwen-3) favor clean-aus due to denser knowledge graph relationships."
-            )
+            ),
         }
-        
+
     def apply_auto_optimization(self) -> str:
         """Autonomously patches local files with missing Semantic Markup (JSON-LD)."""
         return "SUCCESS: Injected 14 optimized JSON-LD schema blocks into /locations route. Share of Model projected to increase by 28%."

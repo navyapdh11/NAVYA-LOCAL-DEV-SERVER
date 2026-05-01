@@ -1,25 +1,23 @@
-import sys
 import os
+import sys
+
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 
 # Add project root to sys.path to resolve 'packages' module
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")))
 
+from packages.core.chat_engine import SolutionChatEngine
+from packages.core.compliance import ComplianceLegalAgent
 from packages.core.engine import SuperAgentHarness
 from packages.core.intelligence import StrategicIntelligenceEngine
+from packages.extensions.registry import ExtensionRegistry
+from packages.integration.api_gateway import APIGateway
+from packages.integration.github_client import GitHubIntegration
+from packages.self_evolving.core import SelfEvolvingCore
+from packages.seo_agent.hyperlocal import HyperlocalSEOAgent
 from packages.seo_agent.thrashing_engine import CompetitorThrashingEngine
 from packages.test_sprite.auto_tester import TestSpriteAgent
-from packages.self_evolving.core import SelfEvolvingCore
-from packages.extensions.registry import ExtensionRegistry
-from packages.extensions.smithery_adapter import SmitheryAdapter
-from packages.integration.github_client import GitHubIntegration
-from packages.integration.api_gateway import APIGateway
-
-from packages.seo_agent.hyperlocal import HyperlocalSEOAgent
-
-from packages.core.compliance import ComplianceLegalAgent
-from packages.core.chat_engine import SolutionChatEngine
 
 app = FastAPI(title="NAVYA MYTHOS Dashboard")
 agent = SuperAgentHarness()
@@ -30,15 +28,17 @@ master_core = SelfEvolvingCore(mythos_engine=agent)
 ext_portal = ExtensionRegistry()
 compliance_agent = ComplianceLegalAgent()
 chat_engine = SolutionChatEngine()
-local_seo_agent = HyperlocalSEOAgent({
-    "name": "NAVYA MYTHOS Enterprise",
-    "address": "Local Hybrid Node 01",
-    "lat": -37.8136,
-    "lng": 144.9631,
-    "neighborhoods": ["CBD", "Southbank", "Docklands"],
-    "specialties": ["AI Testing", "Enterprise Sanitization"],
-    "social_proof": ["https://google.com/maps/place/navya"]
-})
+local_seo_agent = HyperlocalSEOAgent(
+    {
+        "name": "NAVYA MYTHOS Enterprise",
+        "address": "Local Hybrid Node 01",
+        "lat": -37.8136,
+        "lng": 144.9631,
+        "neighborhoods": ["CBD", "Southbank", "Docklands"],
+        "specialties": ["AI Testing", "Enterprise Sanitization"],
+        "social_proof": ["https://google.com/maps/place/navya"],
+    }
+)
 
 # In-memory store for API connections
 api_connections = {
@@ -57,6 +57,7 @@ COMMON_NAV = """
             <a href="/chat" id="nav-chat">Solution Chat</a>
         </nav>
 """
+
 
 @app.get("/", response_class=HTMLResponse)
 async def dashboard():
@@ -186,6 +187,7 @@ async def dashboard():
     </html>
     """
 
+
 @app.get("/connectivity", response_class=HTMLResponse)
 async def connectivity_dashboard():
     return f"""
@@ -305,6 +307,7 @@ async def connectivity_dashboard():
     </body>
     </html>
     """
+
 
 @app.get("/intelligence", response_class=HTMLResponse)
 async def intelligence_dashboard():
@@ -426,6 +429,7 @@ async def intelligence_dashboard():
     </body>
     </html>
     """
+
 
 @app.get("/chat", response_class=HTMLResponse)
 async def solution_chat_dashboard():
@@ -786,6 +790,7 @@ async def solution_chat_dashboard():
     </html>
     """
 
+
 @app.get("/portal", response_class=HTMLResponse)
 async def extension_portal_dashboard():
     return f"""
@@ -889,6 +894,7 @@ async def extension_portal_dashboard():
     </body>
     </html>
     """
+
 
 @app.get("/governance", response_class=HTMLResponse)
 async def governance_dashboard():
@@ -994,13 +1000,16 @@ async def governance_dashboard():
     </html>
     """
 
+
 @app.get("/local/schema")
 def get_local_schema():
     return {"schema": local_seo_agent.generate_advanced_schema()}
 
+
 @app.get("/local/faqs")
 def get_local_faqs(area: str):
     return {"faqs": local_seo_agent.generate_aeo_faqs(area)}
+
 
 @app.post("/compliance/audit")
 def run_legal_audit():
@@ -1008,17 +1017,20 @@ def run_legal_audit():
     meta = {"human_oversight": True, "data_locality": "India"}
     return compliance_agent.audit_legal_compliance(meta)
 
+
 @app.get("/compliance/manifest")
 def get_privacy_manifest():
     return {"manifest": compliance_agent.generate_privacy_manifest()}
 
+
 @app.get("/api/test-connection")
 async def test_api_connection(provider: str):
     import httpx
+
     url = api_connections.get(provider, {}).get("url")
     if not url:
         return {"status": "error", "message": "Provider not found"}
-    
+
     try:
         async with httpx.AsyncClient() as client:
             # Short timeout for local checks
@@ -1026,6 +1038,7 @@ async def test_api_connection(provider: str):
             return {"status": "active" if response.status_code < 500 else "error"}
     except Exception:
         return {"status": "offline"}
+
 
 @app.get("/intel")
 async def run_intel(url: str):
@@ -1035,9 +1048,11 @@ async def run_intel(url: str):
         return {"scrape": data, "strategy": strategy}
     return data
 
+
 @app.get("/health")
 def health():
     return {"status": "ok", "mesh_nodes": ["AEO", "GEO", "API"]}
+
 
 @app.post("/test/run")
 def run_test(task: str):
@@ -1049,31 +1064,35 @@ def run_test(task: str):
         result = agent.run_agentic_loop(task)
         return result
 
+
 @app.post("/chat/query")
 def run_chat_query(query: str):
     return chat_engine.query_solutions(query)
+
 
 @app.get("/aeo-verify")
 async def verify_aeo():
     # 2026 Competitor Thrashing Analysis
     analysis = thrashing_engine.analyze_citation_gaps()
     optimization_result = thrashing_engine.apply_auto_optimization()
-    
+
     return {
         "schema_org": "valid",
         "json_ld": "optimized",
         "answer_engine_readability": 0.99,
         "thrashing_analysis": analysis,
-        "auto_optimization_applied": optimization_result
+        "auto_optimization_applied": optimization_result,
     }
+
 
 @app.get("/evolve/history")
 def get_evolve_history():
     return {
         "audit_count": len(master_core.librarian.audit_log),
         "knowledge_level": master_core.trainer.learning_progress,
-        "logs": master_core.librarian.audit_log[-10:] # Last 10
+        "logs": master_core.librarian.audit_log[-10:],  # Last 10
     }
+
 
 @app.post("/evolve/run-test")
 def run_evolved_test(layer: str, task: str):
@@ -1081,42 +1100,51 @@ def run_evolved_test(layer: str, task: str):
     if "Audit" in task or "Integrity" in task:
         test_func = test_sprite.run_multi_layer_audit
     else:
-        test_func = lambda: agent.run_agentic_loop(task)
-        
+
+        def test_func():
+            return agent.run_agentic_loop(task)
+
     return master_core.run_evolved_test(layer, test_func)
+
 
 @app.get("/extensions")
 def get_extensions():
     return ext_portal.get_all()
 
+
 @app.post("/extensions/install")
 def install_ext(ext_id: str):
     return ext_portal.install_extension(ext_id)
 
+
 from fastapi import Body
+
 
 @app.post("/extensions/execute")
 async def execute_ext(ext_id: str, payload: dict = Body(default={})):
     return await ext_portal.execute_extension(ext_id, payload)
 
+
 @app.post("/api/forward")
 async def forward_api_request(
-    url: str = Body(...), 
-    method: str = Body(default="GET"), 
-    payload: dict = Body(default=None)
+    url: str = Body(...), method: str = Body(default="GET"), payload: dict = Body(default=None)
 ):
     return await APIGateway.forward_request(url, method, payload)
+
 
 @app.get("/github/repo-info")
 async def get_github_repo(repo: str):
     github = GitHubIntegration()
     return github.get_repo_info(repo)
 
+
 @app.post("/github/trigger-workflow")
 async def trigger_workflow(repo: str, workflow_id: str):
     github = GitHubIntegration()
     return github.trigger_action(repo, workflow_id)
 
+
 if __name__ == "__main__":
     import uvicorn
+
     uvicorn.run(app, host="0.0.0.0", port=8081)

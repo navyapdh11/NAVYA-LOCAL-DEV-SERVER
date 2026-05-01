@@ -1,9 +1,11 @@
 import httpx
 
+
 class SmitheryAdapter:
     """
     Adapter for integrating MCP tools from Smithery.ai.
     """
+
     BASE_URL = "https://api.smithery.ai/v1"
 
     @staticmethod

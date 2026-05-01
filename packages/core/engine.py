@@ -1,11 +1,12 @@
 import torch
-from typing import Dict, Any
+
 
 class EngramMemory:
     """
     2026 Conditional Memory Engram for O(1) context retrieval.
     Remembers previous test states and failures for agentic self-healing.
     """
+
     def __init__(self, dim: int = 512):
         self.memory_keys = torch.nn.Parameter(torch.randn(1000, dim))
         self.memory_values = torch.nn.Parameter(torch.randn(1000, dim))
@@ -21,10 +22,12 @@ class EngramMemory:
         self.state_cache[task_id] = error_context
         print(f"Engram: Failure context stored for {task_id}")
 
+
 class SuperAgentHarness:
     """
     DeerFlow 2.0 based SuperAgent harness for autonomous testing loops.
     """
+
     def __init__(self):
         self.memory = EngramMemory()
 

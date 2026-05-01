@@ -2746,5 +2746,113 @@
       "compliance": "Exceeds 2026 Enterprise Standards"
     },
     "id": "audit-226"
+  },
+  {
+    "timestamp": "2026-05-01T11:04:01.873087",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.nvidia.com",
+      "latency_ms": 1515.044927597046,
+      "signals": 12,
+      "moves": 1,
+      "enterprise": 1,
+      "pricing": 0
+    }
+  },
+  {
+    "timestamp": "2026-05-01T11:04:01.873100",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.amd.com",
+      "latency_ms": 1142.8802013397217,
+      "signals": 4,
+      "moves": 1,
+      "enterprise": 1,
+      "pricing": 0
+    }
+  },
+  {
+    "timestamp": "2026-05-01T11:04:01.873103",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.qualcomm.com",
+      "latency_ms": 784.9884033203125,
+      "signals": 3,
+      "moves": 1,
+      "enterprise": 0,
+      "pricing": 0
+    }
+  },
+  {
+    "timestamp": "2026-05-01T11:04:01.873105",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.broadcom.com",
+      "latency_ms": 1512.0773315429688,
+      "signals": 3,
+      "moves": 1,
+      "enterprise": 0,
+      "pricing": 0
+    }
+  },
+  {
+    "timestamp": "2026-05-01T11:04:28.025969",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.anthropic.com",
+      "latency_ms": 665.9884452819824,
+      "signals": 3,
+      "moves": 1,
+      "enterprise": 0,
+      "pricing": 0
+    },
+    "id": "audit-new-1777604668-0"
+  },
+  {
+    "timestamp": "2026-05-01T11:04:28.025986",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.microsoft.com",
+      "latency_ms": 449.70130920410156,
+      "signals": 4,
+      "moves": 1,
+      "enterprise": 0,
+      "pricing": 0
+    },
+    "id": "audit-new-1777604668-1"
+  },
+  {
+    "timestamp": "2026-05-01T11:04:28.025992",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.google.com",
+      "latency_ms": 915.32301902771,
+      "signals": 3,
+      "moves": 1,
+      "enterprise": 0,
+      "pricing": 0
+    },
+    "id": "audit-new-1777604668-2"
+  },
+  {
+    "timestamp": "2026-05-01T11:04:28.025994",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.apple.com",
+      "latency_ms": 538.4912490844727,
+      "signals": 3,
+      "moves": 2,
+      "enterprise": 0,
+      "pricing": 1
+    },
+    "id": "audit-new-1777604668-3"
   }
 ]

@@ -1,5 +1,7 @@
 import os
+
 from github import Github
+
 
 class GitHubIntegration:
     def __init__(self, token=None):
@@ -7,15 +9,22 @@ class GitHubIntegration:
         self.client = Github(self.token) if self.token else None
 
     def get_repo_info(self, repo_name):
-        if not self.client: return {"error": "GitHub authentication required. Set GITHUB_TOKEN."}
+        if not self.client:
+            return {"error": "GitHub authentication required. Set GITHUB_TOKEN."}
         try:
             repo = self.client.get_repo(repo_name)
-            return {"status": "success", "name": repo.full_name, "stars": repo.stargazers_count, "open_issues": repo.open_issues_count}
+            return {
+                "status": "success",
+                "name": repo.full_name,
+                "stars": repo.stargazers_count,
+                "open_issues": repo.open_issues_count,
+            }
         except Exception as e:
             return {"status": "error", "message": str(e)}
 
     def trigger_action(self, repo_name, workflow_id):
-        if not self.client: return {"error": "GitHub authentication required. Set GITHUB_TOKEN."}
+        if not self.client:
+            return {"error": "GitHub authentication required. Set GITHUB_TOKEN."}
         try:
             repo = self.client.get_repo(repo_name)
             workflow = repo.get_workflow(workflow_id)
