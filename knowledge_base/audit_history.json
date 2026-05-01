@@ -2854,5 +2854,131 @@
       "pricing": 1
     },
     "id": "audit-new-1777604668-3"
+  },
+  {
+    "timestamp": "2026-05-01T11:06:12.179957",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.netflix.com",
+      "latency_ms": 2585.874557495117,
+      "signals": 3,
+      "moves": 2,
+      "enterprise": 0,
+      "pricing": 1
+    },
+    "id": "audit-new-1777604772-0"
+  },
+  {
+    "timestamp": "2026-05-01T11:06:31.725079",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.sap.com",
+      "latency_ms": 1256.0715675354004,
+      "signals": 5,
+      "moves": 1,
+      "enterprise": 1,
+      "pricing": 0
+    },
+    "id": "audit-new-1777604791-0"
+  },
+  {
+    "timestamp": "2026-05-01T11:06:31.725100",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.ibm.com",
+      "latency_ms": 2037.489414215088,
+      "signals": 5,
+      "moves": 1,
+      "enterprise": 1,
+      "pricing": 0
+    },
+    "id": "audit-new-1777604791-1"
+  },
+  {
+    "timestamp": "2026-05-01T11:06:31.725105",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.cisco.com",
+      "latency_ms": 813.8031959533691,
+      "signals": 7,
+      "moves": 1,
+      "enterprise": 1,
+      "pricing": 0
+    },
+    "id": "audit-new-1777604791-2"
+  },
+  {
+    "timestamp": "2026-05-01T11:06:49.723015",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.uber.com",
+      "latency_ms": 2237.107276916504,
+      "signals": 3,
+      "moves": 1,
+      "enterprise": 0,
+      "pricing": 0
+    },
+    "id": "audit-new-1777604809-0"
+  },
+  {
+    "timestamp": "2026-05-01T11:06:49.723064",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.airbnb.com",
+      "latency_ms": 3232.433557510376,
+      "signals": 3,
+      "moves": 1,
+      "enterprise": 0,
+      "pricing": 0
+    },
+    "id": "audit-new-1777604809-1"
+  },
+  {
+    "timestamp": "2026-05-01T11:06:49.723080",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.spotify.com",
+      "latency_ms": 922.9328632354736,
+      "signals": 3,
+      "moves": 1,
+      "enterprise": 0,
+      "pricing": 0
+    },
+    "id": "audit-new-1777604809-2"
+  },
+  {
+    "timestamp": "2026-05-01T11:06:49.723088",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.zoom.us",
+      "latency_ms": 2004.3416023254395,
+      "signals": 3,
+      "moves": 1,
+      "enterprise": 0,
+      "pricing": 0
+    },
+    "id": "audit-new-1777604809-3"
+  },
+  {
+    "timestamp": "2026-05-01T11:06:49.723094",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.slack.com",
+      "latency_ms": 2910.3405475616455,
+      "signals": 3,
+      "moves": 1,
+      "enterprise": 0,
+      "pricing": 0
+    },
+    "id": "audit-new-1777604809-4"
   }
 ]

@@ -10,11 +10,11 @@ import pandas as pd
 BASE_URL = "http://localhost:8081"
 # Target different sites to ensure fresh data
 TARGET_SITES = [
-    "https://www.openai.com",
-    "https://www.anthropic.com",
-    "https://www.microsoft.com",
-    "https://www.google.com",
-    "https://www.apple.com",
+    "https://www.uber.com",
+    "https://www.airbnb.com",
+    "https://www.spotify.com",
+    "https://www.zoom.us",
+    "https://www.slack.com",
 ]
 
 def update_persistent_memory(results: List[Dict]):
