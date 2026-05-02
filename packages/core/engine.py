@@ -23,6 +23,8 @@ class EngramMemory:
         print(f"Engram: Failure context stored for {task_id}")
 
 
+from packages.core.inference_gateway import InferenceGateway
+
 class SuperAgentHarness:
     """
     DeerFlow 2.0 based SuperAgent harness for autonomous testing loops.
@@ -30,7 +32,9 @@ class SuperAgentHarness:
 
     def __init__(self):
         self.memory = EngramMemory()
+        self.gateway = InferenceGateway()
 
-    def run_agentic_loop(self, task: str):
-        print(f"SuperAgent: Executing '{task}' via DeerFlow 2.0 loop...")
-        return {"status": "success", "agent_id": "navya-01"}
+    async def run_agentic_loop(self, task: str):
+        print(f"SuperAgent: Executing '{task}' via DeepSeek V4 Inference...")
+        response = await self.gateway.generate(f"Perform the following task: {task}")
+        return {"status": "success", "agent_id": "navya-01", "result": response}

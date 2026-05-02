@@ -1044,7 +1044,7 @@ async def test_api_connection(provider: str):
 async def run_intel(url: str):
     data = await intel_engine.scrape_semantic(url)
     if data["status"] == "success":
-        strategy = intel_engine.analyze_strategy(data)
+        strategy = await intel_engine.analyze_strategy(data)
         return {"scrape": data, "strategy": strategy}
     return data
 
@@ -1055,13 +1055,13 @@ def health():
 
 
 @app.post("/test/run")
-def run_test(task: str):
+async def run_test(task: str):
     if "Audit" in task or "Integrity" in task:
         # 2026 TestSprite Indian DSA execution
         return test_sprite.run_multi_layer_audit()
     else:
         # Default DeerFlow execution
-        result = agent.run_agentic_loop(task)
+        result = await agent.run_agentic_loop(task)
         return result
 
 
@@ -1095,16 +1095,16 @@ def get_evolve_history():
 
 
 @app.post("/evolve/run-test")
-def run_evolved_test(layer: str, task: str):
+async def run_evolved_test(layer: str, task: str):
     # Determine which agent func to run
     if "Audit" in task or "Integrity" in task:
         test_func = test_sprite.run_multi_layer_audit
     else:
 
-        def test_func():
-            return agent.run_agentic_loop(task)
+        async def test_func():
+            return await agent.run_agentic_loop(task)
 
-    return master_core.run_evolved_test(layer, test_func)
+    return await master_core.run_evolved_test(layer, test_func)
 
 
 @app.get("/extensions")

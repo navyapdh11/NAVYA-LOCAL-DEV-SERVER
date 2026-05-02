@@ -3084,5 +3084,213 @@
       "enterprise": 0,
       "pricing": 0
     }
+  },
+  {
+    "timestamp": "2026-05-01T14:59:38.883590",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.nvidia.com",
+      "latency_ms": 3046.8196868896484,
+      "signals": 12,
+      "moves": 1,
+      "enterprise": 1,
+      "pricing": 0
+    }
+  },
+  {
+    "timestamp": "2026-05-01T14:59:38.883608",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.amd.com",
+      "latency_ms": 2145.555019378662,
+      "signals": 4,
+      "moves": 1,
+      "enterprise": 1,
+      "pricing": 0
+    }
+  },
+  {
+    "timestamp": "2026-05-01T14:59:38.883612",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.qualcomm.com",
+      "latency_ms": 3032.975196838379,
+      "signals": 3,
+      "moves": 1,
+      "enterprise": 0,
+      "pricing": 0
+    }
+  },
+  {
+    "timestamp": "2026-05-01T14:59:38.883614",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.broadcom.com",
+      "latency_ms": 1677.14262008667,
+      "signals": 3,
+      "moves": 1,
+      "enterprise": 0,
+      "pricing": 0
+    }
+  },
+  {
+    "timestamp": "2026-05-02T04:14:19.537845",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.nvidia.com",
+      "latency_ms": 1061.2051486968994,
+      "signals": 12,
+      "moves": 1,
+      "enterprise": 1,
+      "pricing": 0
+    }
+  },
+  {
+    "timestamp": "2026-05-02T04:14:19.537854",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.amd.com",
+      "latency_ms": 1234.3692779541016,
+      "signals": 4,
+      "moves": 1,
+      "enterprise": 1,
+      "pricing": 0
+    }
+  },
+  {
+    "timestamp": "2026-05-02T04:14:19.537857",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.qualcomm.com",
+      "latency_ms": 811.5284442901611,
+      "signals": 3,
+      "moves": 1,
+      "enterprise": 0,
+      "pricing": 0
+    }
+  },
+  {
+    "timestamp": "2026-05-02T04:14:19.537859",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.broadcom.com",
+      "latency_ms": 1046.9532012939453,
+      "signals": 3,
+      "moves": 1,
+      "enterprise": 0,
+      "pricing": 0
+    }
+  },
+  {
+    "timestamp": "2026-05-02T05:00:36.400468",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.nvidia.com",
+      "latency_ms": 2299.720525741577,
+      "signals": 12,
+      "moves": 1,
+      "enterprise": 1,
+      "pricing": 0
+    }
+  },
+  {
+    "timestamp": "2026-05-02T05:00:36.400499",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.amd.com",
+      "latency_ms": 1200.7508277893066,
+      "signals": 4,
+      "moves": 1,
+      "enterprise": 1,
+      "pricing": 0
+    }
+  },
+  {
+    "timestamp": "2026-05-02T05:00:36.400510",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.qualcomm.com",
+      "latency_ms": 1230.5450439453125,
+      "signals": 3,
+      "moves": 1,
+      "enterprise": 0,
+      "pricing": 0
+    }
+  },
+  {
+    "timestamp": "2026-05-02T05:00:36.400516",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.broadcom.com",
+      "latency_ms": 1229.123830795288,
+      "signals": 3,
+      "moves": 1,
+      "enterprise": 0,
+      "pricing": 0
+    }
+  },
+  {
+    "timestamp": "2026-05-02T05:16:49.457094",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.nvidia.com",
+      "latency_ms": 2057.342052459717,
+      "signals": 12,
+      "moves": 1,
+      "enterprise": 1,
+      "pricing": 0
+    }
+  },
+  {
+    "timestamp": "2026-05-02T05:16:49.457118",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.amd.com",
+      "latency_ms": 2392.314672470093,
+      "signals": 4,
+      "moves": 1,
+      "enterprise": 1,
+      "pricing": 0
+    }
+  },
+  {
+    "timestamp": "2026-05-02T05:16:49.457128",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.qualcomm.com",
+      "latency_ms": 2391.3121223449707,
+      "signals": 3,
+      "moves": 1,
+      "enterprise": 0,
+      "pricing": 0
+    }
+  },
+  {
+    "timestamp": "2026-05-02T05:16:49.457132",
+    "layer": "strategic_intel",
+    "status": "SUCCESS",
+    "data": {
+      "url": "https://www.broadcom.com",
+      "latency_ms": 2511.6493701934814,
+      "signals": 3,
+      "moves": 1,
+      "enterprise": 0,
+      "pricing": 0
+    }
   }
 ]
