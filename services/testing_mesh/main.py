@@ -19,11 +19,16 @@ from packages.seo_agent.hyperlocal import HyperlocalSEOAgent
 from packages.seo_agent.thrashing_engine import CompetitorThrashingEngine
 from packages.test_sprite.auto_tester import TestSpriteAgent
 
+from packages.core.inference_orchestrator import InferenceOrchestrator
+from packages.core.inference_gateway import InferenceGateway
+
 app = FastAPI(title="NAVYA MYTHOS Dashboard")
 agent = SuperAgentHarness()
 intel_engine = StrategicIntelligenceEngine()
 thrashing_engine = CompetitorThrashingEngine("localhost:8081")
 test_sprite = TestSpriteAgent()
+gateway = InferenceGateway()
+orchestrator = InferenceOrchestrator(inference_gateway=gateway)
 master_core = SelfEvolvingCore(mythos_engine=agent)
 ext_portal = ExtensionRegistry()
 compliance_agent = ComplianceLegalAgent()
