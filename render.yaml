@@ -10,6 +10,8 @@ services:
     envVars:
       - key: PYTHON_VERSION
         value: "3.12"
+      - key: DEEPSEEK_V4_ENDPOINT
+        sync: false
       - key: RENDER_API_KEY
         sync: false
       - key: GITHUB_TOKEN
